@@ -1,6 +1,3 @@
-#= require jquery
-#= require jquery_ujs
-
 #= require jquery.datatables
 #= require raphael
 #= require morris
@@ -8,7 +5,7 @@
 
 #= require switch
 #= require modal
-
+#= require tabs
 
 # Nprogress
 $(document).on 'page:fetch', -> NProgress.start()
@@ -77,7 +74,7 @@ ready = ->
 
 $(document).ready(ready)
 $(document).on 'page:load', ready
-  
+
 $(document).on 'keyup + change', '.table-container .search-input input', ->
   datatable = $(this).parent().parent().find('table.datatable').dataTable()
   datatable.fnFilter($(this).val())

@@ -174,7 +174,7 @@ nav.tabs
     color: #444
     display: inline-block
     font-size: 14px
-    font-weight: bold
+    font-weight: 500
     padding: 20px
     text-decoration: none
 
@@ -186,6 +186,12 @@ nav.tabs
 
   ul li.active a
     color: $primary-color
+
+.tab-content
+  display: none
+
+  &.active
+    display: block
 
 // Notifications
 
@@ -322,6 +328,24 @@ nav.tabs
 section#main
   margin-left: 400px
   padding: 30px 40px
+
+// Breadcrumbs
+
+.breadcrumbs
+  color: #333
+  font-size: 24px
+  font-weight: 300
+
+  a
+    color: #999
+
+  .divider
+    background: url(asset_path('divider.png'))
+    color: #999
+    display: inline-block
+    height: 17px
+    margin: 0 20px
+    width: 6px
 
 // General styles
 
