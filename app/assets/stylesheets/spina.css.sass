@@ -1,0 +1,352 @@
+// Configuration
+@import configuration
+
+// Normalizing
+@import normalize
+
+// Mixins
+@import bourbon
+@import neat
+
+// Grid
+@import grid
+
+// Fonts
+@import fonts
+
+// Animations
+@import animate
+@import custom_animations
+
+// Elements
+@import forms
+@import tables
+@import buttons
+@import modal
+
+// Plugins
+@import morris
+@import nprogress
+
+html
+  min-height: 100%
+
+html, body
+  height: 100%
+  font-family: "Aller", sans-serif
+
+// Primary navigation
+
+nav#primary
+  background: #111
+  float: left
+  height: 100%
+  padding-top: 10px
+  position: fixed
+  text-align: center
+  width: 100px
+
+  ul li a
+    color: #999
+    display: block
+    font-size: 11px
+    padding: 20px 0
+    position: relative
+    text-decoration: none
+    width: 100%
+    @include transition(color .15s ease)
+
+  ul li.active a, ul li a:hover
+    color: #fff
+
+  ul li.bottom a
+    bottom: 0
+    left: 0
+    position: absolute
+
+  ul li a:before
+    display: block
+    font-size: 28px
+    margin-bottom: 8px
+
+  ul li a[data-badge]:after
+    background: $danger-color
+    border-radius: 8px
+    color: #fff
+    content: attr(data-badge)
+    display: block
+    font-weight: bold
+    line-height: 16px
+    min-width: 10px
+    padding: 0 3px
+    position: absolute
+    right: 28px
+    top: 12px
+
+// Secondary navigation
+
+nav#secondary
+  background: #f5f5f5
+  border-right: 1px solid #ccc
+  float: left
+  height: 100%
+  left: 100px
+  padding: 30px 0
+  position: fixed
+  width: 300px
+
+  h1
+    color: #333
+    font-size: 24px
+    font-weight: 300
+    margin-bottom: 36px
+    padding: 0 30px
+
+  ul li
+    position: relative
+
+  ul li a
+    color: #333
+    display: block
+    font-size: 15px
+    font-weight: bold
+    line-height: 15px
+    margin-left: 36px
+    padding: 16px 30px
+    text-decoration: none
+
+    small
+      color: #666
+      display: block
+      font-size: 13px
+      font-weight: normal
+      line-height: 18px
+      margin-top: 2px
+      @include transition(color .15s ease)
+
+  ul li a:hover
+    color: #333
+
+    small, &:before
+      color: inherit
+
+  ul li.active a
+    color: $primary-color
+
+    small, &:before
+      color: inherit
+
+  ul li a:before
+    color: #666
+    display: block
+    float: left
+    font-size: 24px
+    margin-left: -36px
+    width: 24px
+    @include transition(color .15s ease)
+
+  ul li.active
+    &:before
+      content: ""
+      display: block
+      position: absolute
+      right: -23px
+      top: 33%
+      @include triangle(23px, #ccc, right)
+
+    &:after
+      content: ""
+      display: block
+      position: absolute
+      right: -22px
+      top: 33%
+      @include triangle(22px, #f5f5f5, right)
+
+// Tabs
+
+nav.tabs
+  ul li
+    display: inline
+
+  ul li a
+    color: #444
+    display: inline-block
+    font-size: 14px
+    font-weight: bold
+    padding: 20px
+    text-decoration: none
+
+  ul li a:first-child
+    padding-left: 0
+
+  ul li a:hover
+    color: #222
+
+  ul li.active a
+    color: $primary-color
+
+// Notifications
+
+.notification
+  color: $info-color
+  margin: 20px 0
+
+  &:before
+    color: #77caf9
+    display: block
+    float: left
+    font-size: 18px
+    margin-top: 8px
+
+  p
+    color: $info-color
+    font-size: 13px
+    font-weight: bold
+    line-height: 18px
+    margin-left: 32px
+
+  small
+    display: block
+    font-size: 13px
+    font-weight: normal
+
+  &.notification-error
+    color: $error-color
+
+    &:before
+      color: #e7baba
+
+    p
+      color: $error-color
+
+// Filters
+
+.filters
+  margin: 20px 0
+
+// Datepicker
+
+.ui-datepicker
+  background: #fff
+  border: none
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .25)
+  width: 250px
+
+.ui-datepicker-header
+  border: none
+  font-weight: 300
+
+  a.ui-datepicker-prev, a.ui-datepicker-next
+    background: none
+    border: none
+    color: transparent
+    cursor: pointer
+    display: block
+    height: 36px
+    opacity: .6
+    padding: 8px 0
+    position: absolute
+    right: 0
+    top: 0
+    width: 36px
+
+  a.ui-datepicker-prev
+    left: 0
+
+  a.ui-datepicker-prev:hover, a.ui-datepicker-next:hover
+    opacity: 1
+
+  a.ui-datepicker-prev span
+    background: url(asset_path("admin/arrow-left.png", "image")) no-repeat center
+    background-size: 10px 13px
+
+  a.ui-datepicker-next span
+    background: url(asset_path("admin/arrow-right.png", "image")) no-repeat center
+    background-size: 10px 13px
+
+  .ui-datepicker-title
+    line-height: 42px
+    text-align: center
+
+.ui-datepicker-calendar
+  width: 100%
+
+  tr td:first-child, tr th:first-child
+    padding-left: 0px
+
+  tr td:last-child, tr th:last-child
+    padding-right: 0px
+
+  thead th
+    color: #444
+    font-weight: 500
+
+  tbody tr, thead tr
+    border: none
+
+  tbody tr td
+    background: none
+
+  tbody tr td a
+    display: block
+    line-height: 28px
+    text-align: center
+    padding: 2px 4px
+    width: 32px
+
+  tbody tr td a.ui-state-default
+    background: none
+    border: none
+    color: #777
+    font-weight: 500
+
+  tr:hover
+    background: none
+
+  tbody tr td a:hover
+    color: #000
+
+  tbody tr td a.ui-state-highlight
+    background: #eee
+    border-radius: 2px
+
+  tbody tr td a.ui-state-active
+    background: #444
+    border-radius: 2px
+    color: #fff
+
+// Main content
+
+section#main
+  margin-left: 400px
+  padding: 30px 40px
+
+// General styles
+
+h1, h2, h3, h4, h5, h6
+  font-weight: 300
+  margin: 0
+
+h1, h2
+  color: #333
+  font-size: 24px
+
+ul
+  list-style: none
+  margin: 0
+  padding: 0
+
+p
+  color: #333
+  font-size: 13px
+  line-height: 18px
+
+a
+  color: $primary-color
+  text-decoration: none
+
+.pull-left
+  float: left
+
+.pull-right
+  float: right

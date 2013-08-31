@@ -1,0 +1,17 @@
+@include font-face(Aller, asset_path("aller_rg-webfont", "font"))
+@include font-face(Aller, asset_path("aller_bd-webfont", "font"), bold)
+@include font-face(Aller, asset_path("aller_bdit-webfont", "font"), bold, italic)
+@include font-face(Aller, asset_path("aller_it-webfont", "font"), normal, italic)
+@include font-face(Aller, asset_path("aller_lt-webfont", "font"), 300)
+@include font-face(Spina, asset_path("spina", "font"))
+
+// Icons
+
+[data-icon]:before
+  font-family: $icon-font
+  content: attr(data-icon)
+  font-style: normal
+  font-weight: normal
+  speak: none
+  line-height: 1
+  -webkit-font-smoothing: antialiased

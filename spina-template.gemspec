@@ -7,17 +7,21 @@ Gem::Specification.new do |spec|
   spec.name          = "spina-template"
   spec.version       = Spina::Template::VERSION
   spec.authors       = ["Bram Jetten"]
-  spec.email         = ["mail@bramjetten.nl"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.email         = ["bram@denkgroot.com"]
+  spec.description   = "Template"
+  spec.summary       = "Spina"
+  spec.homepage      = "http://www.denkgroot.com"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+
+  spec.add_dependency "rails", '~> 4.0.0'
+  spec.add_dependency "bourbon"
+  spec.add_dependency "neat"
+  spec.add_dependency "coffee-rails"
+  spec.add_dependency "jquery-rails"
 end

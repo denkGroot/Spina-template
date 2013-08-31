@@ -1,0 +1,94 @@
+// Buttons
+
+button, input[type="submit"]
+  border: none
+
+.button
+  background: #efefef
+  border-radius: 3px
+  color: #444
+  display: inline-block
+  font-size: 13px
+  font-weight: bold
+  line-height: 36px
+  margin: 0 4px 4px 0
+  padding: 0 16px
+  text-decoration: none
+  @include transition(all .2s ease)
+
+  &:hover
+    background: tint(#efefef, 20%)
+
+  &:active
+    background: shade(#efefef, 10%)
+
+  &.button-primary
+    background: $primary-color
+    color: #fff
+
+    &:hover
+      background: tint($primary-color, 20%)
+
+    &:active
+      background: shade($primary-color, 10%)
+
+  &.button-success
+    background: $success-color
+    color: #fff
+
+    &:hover
+      background: tint($success-color, 20%)
+
+    &:active
+      background: shade($success-color, 10%)
+
+  &.button-danger
+    color: $danger-color
+
+  &.button-link
+    background: none
+
+    &:hover
+      color: #333
+
+    &:active
+      color: #111
+
+  &:before
+    margin-right: 8px
+    vertical-align: middle
+
+  &.button-large
+    border-radius: 4px
+    font-size: 15px
+    line-height: 42px
+    padding: 0 18px
+
+    &:before
+      margin-right: 10px
+
+  &.button-small
+    font-size: 12px
+    line-height: 32px
+    padding: 0 12px
+
+  &.button-mini
+    font-size: 12px
+    line-height: 26px
+    padding: 0 10px
+
+  &.button-hollow
+    background: none
+    border: 1px solid #ccc
+    color: #777
+
+    &:hover
+      border: 1px solid #bbb
+      color: #666
+
+    &:active
+      border: 1px solid #aaa
+      color: #444
+
+  &.button-round
+    border-radius: 21px

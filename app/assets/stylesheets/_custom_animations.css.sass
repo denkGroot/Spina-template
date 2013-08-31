@@ -1,0 +1,33 @@
+@include keyframes("small-shake")
+  0%, 100%
+    @include transform(translateX(0))
+  20%, 60%
+    @include transform(translateX(7px))
+  40%, 80%
+    @include transform(translateX(-7px))
+
+.animated.small-shake
+  @include animation("small-shake" .4s ease)
+
+@include keyframes("switchon")
+  0%
+    @include transform(translate3d(0, 0, 0))
+  50%
+    width: 32px
+    @include transform(translate3d(0, 0, 0))
+  100%
+    width: 23px
+    @include transform(translate3d(17px, 0, 0))
+
+@include keyframes("switchoff")
+  0%
+    @include transform(translate3d(17px, 0, 0))
+  100%
+    @include transform(translate3d(0, 0, 0))
+
+.deactivated .knob
+  @include animation("switchoff" .2s ease)
+
+.activated .knob
+  @include animation("switchon" .4s)
+  @include animation-fill-mode(forwards)

@@ -1,0 +1,89 @@
+// Tables
+
+.table-container
+  margin: 0 -40px
+
+  table.table tr td:first-child, table.table tr th:first-child
+    padding-left: 40px
+
+  table.table tr td:last-child, table.table tr th:last-child
+    padding-right: 40px
+
+table.table
+  color: #333
+  font-size: 13px
+  line-height: 18px
+  margin: 20px 0
+  width: 100%
+
+  thead tr, tbody tr
+    border-bottom: 1px solid #ddd
+
+  tbody tr:last-child
+    border: none
+
+  thead th
+    outline: none
+    padding: 6px 12px
+    text-align: left
+
+  tbody td, tbody th
+    padding: 10px 12px
+    text-align: left
+
+  th.nowrap, td.nowrap
+    white-space: nowrap
+
+  small
+    color: #666
+    font-size: 13px
+    font-weight: 300
+
+  td .button
+    margin-bottom: 0
+
+  td.align-center
+    text-align: center
+
+  td.align-left
+    text-align: left
+
+  td.align-right
+    text-align: right
+
+.table-clickable
+  tbody tr:hover
+    background: #f9f9f9
+
+  tbody tr
+    cursor: pointer
+
+// Datatables
+
+.dataTables_filter
+  display: none
+
+.table-container > .search-input
+  margin-right: 40px
+
+.dataTables_info
+  color: #666
+  display: inline-block
+  font-size: 12px
+  margin-left: 40px
+
+.dataTables_paginate
+  float: right
+  margin-right: 40px
+
+  a
+    color: #333
+    cursor: pointer
+    display: inline-block
+    font-size: 13px
+    font-weight: bold
+    line-height: 24px
+    padding: 0 13px
+
+  a.paginate_disabled_previous, a.paginate_disabled_next
+    display: none
