@@ -47,6 +47,16 @@ textarea
   min-height: 120px
   resize: vertical
 
+// Errors
+.field_with_errors 
+  #{$all-text-inputs}, textarea
+    border: 1px solid $error-color
+
+  #{$all-text-inputs-focus}, textarea:focus
+    border: 1px solid $danger-color
+  
+// Search input
+
 .search-input
   display: inline-block
   position: relative

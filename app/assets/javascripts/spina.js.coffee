@@ -1,4 +1,7 @@
 #= require jquery.datatables
+#= require jquery.ui
+#= require jquery.sortable
+#= require jquery.nestedsortable
 #= require raphael
 #= require morris
 #= require nprogress
@@ -43,6 +46,32 @@ $(document).on 'keyup + change', '.table-container .search-input input', ->
 # Datatables
 
 ready = ->
+
+  $('ol.sortable').nestedSortable
+    listType: 'ol'
+    items: 'li'
+    disableNesting: 'no-nest',
+    placeholder: 'placeholder'
+    forcePlaceholderSize: true
+    handle: 'div'
+    tolerance: 'pointer'
+    toleranceElement: '> div'
+    maxLevels: 3
+    update: ->
+      # based upon https://github.com/patrickshannon/Nested-Drag-and-Drop-with-Ancestry/blob/master/public/javascripts/application.js
+      mylist = $(this).nestedSortable('serialize')
+      mylist.replace(/root/g, '')
+      sort_url = $(this).data('sort-url')
+      finalstring = ''
+      $(mylist.split('&')).each (index) ->
+        string2 = this.split('[')
+        type = string2[0]
+        string3 = string2[1].split(']')
+        id = string3[0]
+        fragments = this.split('=')
+        parent_id = fragments[1]
+        finalstring = finalstring + type + '[' + index + ']' + '[id]=' + id + '&' + type + '[' + index + '][parent_id]=' + parent_id + '&' + type + '[' + index + '][position]=' + index + '&'
+      $.post sort_url, finalstring
 
   # Switch
   if $('input[data-switch]').length > 0
