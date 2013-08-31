@@ -8,9 +8,40 @@
     padding: 0
     list-style: none
 
-    li
+    ol
+      list-style: none
+      padding: 0      
+
+    li.ui-sortable-helper
+      border: none
+
+    li div
       border-bottom: 1px solid #ddd
+      cursor: move
       padding: 10px 40px
+      width: 100%
+
+    > li:last-child div
+      border: none
 
     li .button
       margin-bottom: 0
+
+    li a.sortable-link
+      color: $primary-color
+      font-size: 13px
+      font-weight: 500
+      padding-left: 0
+
+  .placeholder
+    background: #f9f9f9
+    border: none
+
+  ol.sortable ol li
+    padding-right: 0
+
+  ol.sortable ol li div
+    padding-left: 72px
+
+  ol.sortable ol li ol li div
+    padding-left: 104px
