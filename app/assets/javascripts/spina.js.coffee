@@ -36,6 +36,10 @@ $(document).on 'click', '.clear-input', ->
   link.fadeOut(200)
   return false
 
+$(document).on 'keyup + change', '.table-container .search-input input', ->
+  datatable = $(this).parent().parent().find('table.datatable').dataTable()
+  datatable.fnFilter($(this).val())
+
 # Datatables
 
 ready = ->
@@ -74,20 +78,3 @@ ready = ->
 
 $(document).ready(ready)
 $(document).on 'page:load', ready
-
-$(document).on 'keyup + change', '.table-container .search-input input', ->
-  datatable = $(this).parent().parent().find('table.datatable').dataTable()
-  datatable.fnFilter($(this).val())
-
-# Forms
-$(document).on 'change', 'form', ->
-  buttons = $(this).find('input[type="submit"], button[type="submit"]')
-  buttons.text("Opslaan")
-  buttons.removeClass('button-success')
-  buttons.addClass('button-primary')
-
-$(document).on 'keyup', 'form input, form textarea', ->
-  buttons = $(this).parents('form').find('input[type="submit"], button[type="submit"]')
-  buttons.text("Opslaan")
-  buttons.removeClass('button-success')
-  buttons.addClass('button-primary')
