@@ -41,8 +41,8 @@ $(document).on 'click', '.clear-input', ->
 ready = ->
 
   # Switch
-  if $('input.switch').length > 0
-    $('input.switch').spinaSwitch()
+  if $('input[data-switch]').length > 0
+    $('input[data-switch]').spinaSwitch()
 
   # Datepicker
   if $('.datepicker').length > 0
