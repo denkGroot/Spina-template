@@ -50,6 +50,9 @@ $(document).on 'keyup + change', '.table-container .search-input input', ->
 
 ready = ->
 
+  # Login wrapper
+  $('#login_wrapper').css('margin-top', ($(document).innerHeight() / 2) - ($('#login_wrapper').innerHeight() / 2) + 'px')
+
   # Wysihtml5 editor
   $('.wysihtml5-container').each ->
     textarea = $(this).find('textarea')
