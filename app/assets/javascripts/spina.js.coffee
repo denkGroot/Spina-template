@@ -5,10 +5,13 @@
 #= require raphael
 #= require morris
 #= require nprogress
+#= require wysihtml5
+#= require wysihtml5_parser_rules
 
 #= require switch
 #= require modal
 #= require tabs
+#= require dropdown
 
 # Nprogress
 $(document).on 'page:fetch', -> NProgress.start()
@@ -46,6 +49,17 @@ $(document).on 'keyup + change', '.table-container .search-input input', ->
 # Datatables
 
 ready = ->
+
+  # Wysihtml5 editor
+  $('.wysihtml5-container').each ->
+    textarea = $(this).find('textarea')
+    toolbar = $(this).find('.toolbar')
+
+    editor = new wysihtml5.Editor textarea.attr('id'), {
+      toolbar: toolbar.attr('id'),
+      useLineBreaks: false,
+      parserRules: wysihtml5ParserRules,
+    }
 
   $('ol.sortable').nestedSortable
     listType: 'ol'
