@@ -18,14 +18,14 @@ $(document).on 'click', '.modal', (e) ->
 
 hideModal = ->
   $('body').removeClass('overlay')
-  $('#overlay .modal').addClass('fadeOutUp')
+  $('#overlay .modal').addClass('flyOut')
   $('#overlay').fadeOut 300, ->
     $(this).remove()
   return false
 
 showModal = (element) ->
   modal = element.clone()
-  modal.addClass('animated fadeInDown')
+  modal.addClass('animated flyIn')
 
   if $('#overlay').length < 1
     $('body').append('<div id="overlay"></div>')
@@ -33,8 +33,8 @@ showModal = (element) ->
   modal.css({"margin-top": window.innerHeight / 8})
 
   modal.appendTo('#overlay')
-  $('#overlay').fadeIn 200, ->
-    modal.show()
+  $('#overlay').fadeIn(400)
+  modal.show()
 
   $('body').addClass('overlay')
   return false

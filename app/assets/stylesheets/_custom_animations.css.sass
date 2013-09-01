@@ -1,3 +1,25 @@
+@include keyframes("flyIn")
+  0%
+    opacity: 0
+    @include transform(scale(.9))
+  100%
+    opacity: 1
+    @include transform(scale(1))
+
+.animated.flyIn
+  @include animation("flyIn" .4s ease)
+
+@include keyframes("flyOut")
+  0%
+    opacity: 1
+    @include transform(scale(1))
+  100%
+    opacity: 0
+    @include transform(scale(.9))
+
+.animated.flyOut
+  @include animation("flyOut" .4s ease)
+
 @include keyframes("small-shake")
   0%, 100%
     @include transform(translateX(0))
