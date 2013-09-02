@@ -12,6 +12,7 @@
 #= require modal
 #= require tabs
 #= require dropdown
+#= require galleryselect
 
 # Nprogress
 $(document).on 'page:fetch', -> NProgress.start()
@@ -49,6 +50,9 @@ $(document).on 'keyup + change', '.table-container .search-input input', ->
 # Datatables
 
 ready = ->
+
+  # Gallery select
+  $('.gallery-select').galleryselect()
 
   # Login wrapper
   $('#login_wrapper').css('margin-top', ($(document).innerHeight() / 2) - ($('#login_wrapper').innerHeight() / 2) + 'px')
