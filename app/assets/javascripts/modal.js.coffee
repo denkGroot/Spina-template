@@ -30,7 +30,10 @@ showModal = (element) ->
   if $('#overlay').length < 1
     $('body').append('<div id="overlay"></div>')
 
+  maxheight = window.innerHeight - (window.innerHeight / 8) - 150
+
   modal.css({"margin-top": window.innerHeight / 8})
+  modal.find('section').css({"max-height": maxheight})
 
   modal.appendTo('#overlay')
   $('#overlay').fadeIn(400)
