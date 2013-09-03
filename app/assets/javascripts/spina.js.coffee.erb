@@ -2,6 +2,7 @@
 #= require jquery.ui
 #= require jquery.sortable
 #= require jquery.nestedsortable
+#= require jquery.customfileinput
 #= require raphael
 #= require morris
 #= require nprogress
@@ -50,6 +51,9 @@ $(document).on 'keyup + change', '.table-container .search-input input', ->
 # Datatables
 
 ready = ->
+
+  # Custom file
+  $('input[type="file"][data-customfileinput]').customFileInput()
 
   # Gallery select
   $('.gallery-select').galleryselect()
