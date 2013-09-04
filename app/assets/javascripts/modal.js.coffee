@@ -1,4 +1,7 @@
 # jQuery plugin
+$.hideModal = ->
+  hideModal()
+
 $.fn.modal = ->
   showModal($(this))
 
@@ -10,7 +13,7 @@ $(document).on 'click', 'a[data-toggle="modal"]', ->
 $(document).on 'click', 'body.overlay', ->
   hideModal()
 
-$(document).on 'click', 'a[data-dismiss="modal"]', ->
+$(document).on 'click', '[data-dismiss="modal"]', ->
   hideModal()
 
 $(document).on 'click', '.modal', (e) ->
@@ -41,6 +44,7 @@ showModal = (element) ->
 
   modal.find('input[type="file"][data-customfileinput]').customFileInput()
   modal.find('.new_photo').uploadPhoto()
+  modal.find('.gallery-select').galleryselect()
 
   $('body').addClass('overlay')
   return false
