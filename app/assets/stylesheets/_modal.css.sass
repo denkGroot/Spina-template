@@ -67,7 +67,7 @@
 
   section
     overflow: scroll
-    padding: 20px 20px
+    padding: 20px
     background: white
 
     .col
@@ -94,10 +94,15 @@
         line-height: 20px
         font-family: Consolas, Courier, monospace
 
+    footer
+      clear: both
+      margin: -20px
+
   footer
     border-top: 1px solid #eee
 
-  footer a
+  footer a, footer button
+    background: none
     color: #999
     display: inline-block
     font-size: 13px
@@ -107,8 +112,8 @@
     width: 49%
     @include transition(color .2s ease-out)
 
-  footer a.primary, footer a:hover
+  footer a.primary, footer a:hover, footer button.primary, footer button:hover
     color: #000
 
-  footer a.primary:hover
+  footer a.primary:hover, footer button.primary:hover
     color: $primary-color
