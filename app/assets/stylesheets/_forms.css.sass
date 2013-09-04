@@ -191,10 +191,25 @@ input.datepicker
     &:before
       color: #bbb
       content: "O"
-      display: block
+      display: display
       font-family: $icon-font
       font-size: 42px
       @include transition(color .2s ease)
+
+    &:after
+      color: #bbb
+      content: "R"
+      display: none
+      font-family: $icon-font
+      font-size: 42px
+      @include animation("rotate" 2s linear infinite)
+
+  .customfile.loading
+    &:before
+      display: none
+
+    &:after
+      display: block
 
   .customfile:hover:before
     color: #333

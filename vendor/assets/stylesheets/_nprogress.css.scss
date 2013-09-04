@@ -2,12 +2,18 @@
 #nprogress {
   pointer-events: none;
   -webkit-pointer-events: none;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  top: 0px;
+  height: 2px;
+  left: 400px;
 }
 
 #nprogress .bar {
   background: $primary-color;
 
-  position: fixed;
+  position: absolute;
   z-index: 100;
   top: 0;
   left: 0;

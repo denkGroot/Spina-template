@@ -53,3 +53,9 @@
 .activated .knob
   @include animation("switchon" .4s)
   @include animation-fill-mode(forwards)
+
+@include keyframes("rotate")
+  0%
+    @include transform(rotate(0deg))
+  100%
+    @include transform(rotate(360deg))
