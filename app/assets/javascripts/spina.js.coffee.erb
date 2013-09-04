@@ -3,6 +3,7 @@
 #= require jquery.sortable
 #= require jquery.nestedsortable
 #= require jquery.customfileinput
+#= require jquery-fileupload/basic
 #= require raphael
 #= require morris
 #= require nprogress
@@ -54,6 +55,28 @@ ready = ->
 
   # Custom file
   $('input[type="file"][data-customfileinput]').customFileInput()
+
+  # Image upload
+  $('.new_photo').each ->
+    $(this).fileupload
+      dataType: "script"
+      singleFileUploads: true
+      dropZone: $(this).find('.photo-field')
+      maxNumberOfFiles: 1
+      add: (e, data) ->
+        types = /(\.|\/)(gif|jpe?g|png)$/i
+        file = data.files[0]
+        if types.test(file.type) || types.test(file.name)
+          NProgress.start()
+          data.submit()
+        else
+          alert("#{file.name} is geen gif-, jpeg- of png-bestand")
+      progress: (e, data) ->
+        if data.context
+          NProgress.set(data.loaded / data.total)
+      done: (e, data) ->
+        NProgress.done()
+        data.context.find('.image').show()
 
   # Gallery select
   $('.gallery-select').galleryselect()

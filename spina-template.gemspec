@@ -23,4 +23,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "bourbon"
   spec.add_dependency "neat"
   spec.add_dependency "coffee-rails"
+  spec.add_dependency 'jquery-fileupload-rails'
 end
