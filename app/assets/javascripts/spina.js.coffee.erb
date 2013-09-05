@@ -69,14 +69,21 @@ ready = ->
 
   # Wysihtml5 editor
   $('.wysihtml5-container').each ->
-    textarea = $(this).find('textarea')
-    toolbar = $(this).find('.toolbar')
+    container = $(this)
+    textarea = container.find('textarea')
+    toolbar = container.find('.toolbar')
 
     editor = new wysihtml5.Editor textarea.attr('id'), {
       toolbar: toolbar.attr('id'),
       useLineBreaks: false,
       parserRules: wysihtml5ParserRules,
     }
+
+    editor.on "focus", ->
+      container.find(".choose-text-type").fadeIn(100)
+
+    editor.on "blur", ->
+      container.find(".choose-text-type").fadeOut(100)
 
   $('ol.sortable').nestedSortable
     listType: 'ol'
