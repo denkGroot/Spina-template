@@ -232,3 +232,35 @@ input.datepicker
 
   .customfile-button
     display: none
+
+.media_picker
+  border-radius: 3px
+  color: #333
+  display: inline-block
+  height: 100%
+  position: relative
+  
+  &:before
+    background: rgba(255, 255, 255, .5)
+    content: ""
+    display: none
+    height: 100%
+    left: 0
+    position: absolute
+    text-align: center
+    width: 100%
+
+  .placeholder
+    color: #666
+    font-size: 12px
+    font-weight: 500
+    line-height: 36px
+
+    span:before
+      display: inline-block
+      font-size: 12px
+      margin-right: 6px
+      vertical-align: middle
+
+.media_picker:hover:before
+  display: block
