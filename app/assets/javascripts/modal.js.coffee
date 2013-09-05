@@ -44,7 +44,6 @@ showModal = (element) ->
 
   modal.find('input[type="file"][data-customfileinput]').customFileInput()
   modal.find('.new_photo').uploadPhoto()
-  modal.find('.gallery-select').galleryselect()
 
   $('body').addClass('overlay')
   return false
