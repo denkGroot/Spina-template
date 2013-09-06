@@ -1,4 +1,4 @@
-// Photo gallery
+// Gallery
 
 .gallery
   margin: 20px 0
@@ -100,3 +100,22 @@
 
     img
       display: block
+
+  .item.attachment
+    height: 60px
+    line-height: 60px
+    font-size: 13px
+    padding: 0 20px 0 20px
+    width: auto
+
+    &:before
+      content: "S"
+      font-family: $icon-font
+      font-size: 28px
+      margin-right: 10px
+      vertical-align: middle
+
+    &.selected
+      background: $primary-color
+      color: #fff
+      opacity: .7

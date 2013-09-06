@@ -24,7 +24,7 @@ $(document).on 'page:restore', -> NProgress.remove()
 
 # Clickable TR's
 $(document).on 'click', '.table-clickable tbody tr', ->
-  checkbox = $(this).find('input[type="checkbox"]:first')
+  checkbox = $(this).find('input[type="checkbox"]:first, input[type="radio"]:first')
   checkbox.prop("checked", !checkbox.prop("checked"))
 
 # Search inputs
