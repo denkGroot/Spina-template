@@ -202,36 +202,45 @@ nav.tabs
 // Notifications
 
 .notification
+  position: relative
   color: $info-color
   margin: 20px 0
+  overflow: hidden
+  font-size: 13px
+  padding-left: 32px
 
   &:before
+    position: absolute
+    left: 0px
     color: #77caf9
     display: block
-    float: left
     font-size: 18px
-    margin-top: 8px
+    margin-top: 1em
 
   p
     color: $info-color
-    font-size: 13px
     font-weight: 500
     line-height: 18px
-    margin-left: 32px
+    margin-bottom: 0
 
   small
     display: block
-    font-size: 13px
+    font-weight: normal
+
+  ul
+    margin: 0
+
+  li
     font-weight: normal
 
   &.notification-error
     color: $error-color
 
-    &:before
-      color: #e7baba
-
     p
       color: $error-color
+
+    &:before
+      color: #e7baba
 
 // Filters
 
