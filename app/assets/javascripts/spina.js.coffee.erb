@@ -73,7 +73,7 @@ ready = ->
     editor = new wysihtml5.Editor textarea.attr('id'), {
       toolbar: toolbar.attr('id'),
       useLineBreaks: false,
-      parserRules: wysihtml5ParserRules,
+      parserRules: wysihtml5ParserRules
     }
 
     editor.on "focus", ->
