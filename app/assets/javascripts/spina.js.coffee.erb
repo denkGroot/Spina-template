@@ -73,8 +73,12 @@ ready = ->
     editor = new wysihtml5.Editor textarea.attr('id'), {
       toolbar: toolbar.attr('id'),
       useLineBreaks: false,
-      parserRules: wysihtml5ParserRules
+      parserRules: wysihtml5ParserRules,
+      stylesheets: ["<%= asset_path 'wysihtml5.css' %>"]
     }
+
+    editor.on "load", ->
+      container.data("wysihtml5", editor)
 
     editor.on "focus", ->
       container.find(".choose-text-type").fadeIn(100)
