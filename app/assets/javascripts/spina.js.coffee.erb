@@ -50,6 +50,33 @@ $(document).on 'keyup + change', '.table-container .search-input input', ->
   datatable = $(this).parent().parent().find('table.datatable').dataTable()
   datatable.fnFilter($(this).val())
 
+$(document).on 'change', '.dd', ->
+  serialized = $(this).nestable('serialize')
+  sort_url = $(this).data('sort-url')
+  console.log serialized
+  $.post sort_url, { list: serialized }
+
+
+
+
+  # based upon https://github.com/patrickshannon/Nested-Drag-and-Drop-with-Ancestry/blob/master/public/javascripts/application.js
+  #     mylist = $(this).nestedSortable('serialize')
+  #     mylist.replace(/root/g, '')
+  #     sort_url = $(this).data('sort-url')
+  #     finalstring = ''
+  #     $(mylist.split('&')).each (index) ->
+  #       string2 = this.split('[')
+  #       type = string2[0]
+  #       string3 = string2[1].split(']')
+  #       id = string3[0]
+  #       fragments = this.split('=')
+  #       parent_id = fragments[1]
+  #       finalstring = finalstring + type + '[' + index + ']' + '[id]=' + id + '&' + type + '[' + index + '][parent_id]=' + parent_id + '&' + type + '[' + index + '][position]=' + index + '&'
+  #     $.post sort_url, finalstring
+
+
+
+
 # Datatables
 
 ready = ->
@@ -86,7 +113,9 @@ ready = ->
     editor.on "blur", ->
       container.find(".choose-text-type").fadeOut(100)
 
-  $(".dd").nestable()
+  $(".dd").nestable
+    maxDepth: 3
+
   # $('ol.sortable').nestedSortable
   #   listType: 'ol'
   #   items: 'li'

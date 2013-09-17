@@ -55,6 +55,7 @@
 
 .dd
   margin: 0 -40px
+  overflow: hidden
   position: relative
 
   & > .dd-list > .dd-item:first-child
@@ -68,24 +69,29 @@
 
   .dd-list
     background: #f9f9f9
-    border-bottom: 1px solid #ddd
     border-top: 1px solid #ddd
-    padding-left: 30px
-    @include box-sizing(border-box)
+
+    .dd-item:last-child
+      border-bottom: none
+    
+    .dd-item
+      padding-left: 30px
 
     .dd-list
       background: #f1f1f1
-      border-left: 1px solid #ddd
-      border-top: 1px solid #ddd
+      margin-left: -30px
+
+      .dd-item
+        padding-left: 60px
 
       .dd-placeholder
         background: #f1f1f1
 
-    .dd-item:last-child .dd-list
-      border-bottom: none
-
 .dd-collapsed .dd-list
   display: none
+
+.dd-item
+  border-bottom: 1px solid #ddd
 
 .dd-item, .dd-empty, .dd-placeholder
   margin: 0
@@ -93,7 +99,7 @@
   position: relative
 
 .dd-placeholder, .dd-empty
-  background: #f9f9f9
+  background: #fcfcfc
   margin: 0
   padding: 0
   @include box-sizing(border-box)
@@ -105,6 +111,9 @@
 .dd-handle
   padding: 10px 40px
   text-decoration: none
+
+  a
+    margin: 0
 
 .dd-dragel
   pointer-events: none
@@ -120,29 +129,30 @@
   cursor: pointer
   display: block
   float: left
-  font-size: 12px
+  font-size: 10px
   font-weight: bold
-  height: 20px
-  line-height: 1
-  margin: 5px 0
+  height: 52px
+  line-height: 20px
   overflow: hidden
   padding: 0
   position: relative
   text-align: center
   text-indent: 100%
   white-space: nowrap
-  width: 25px
+  width: 40px
 
   &:before
-    content: "+"
+    color: #444
+    content: "t"
     display: block
+    font-family: $icon-font
     position: absolute
-    text-align: center
+    text-align: right
     text-indent: 0
     width: 100%
 
   &[data-action="collapse"]:before
-    content: "-"
+    content: "X"
 
 // ol.dd-list
 
