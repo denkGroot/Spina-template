@@ -239,7 +239,7 @@ input.datepicker
     &:before
       color: #bbb
       content: "O"
-      display: display
+      display: block
       font-family: $icon-font
       font-size: 42px
       @include transition(color .2s ease)
@@ -281,7 +281,61 @@ input.datepicker
   .customfile-button
     display: none
 
-.attachments .item.attachment
+.new_document
+  line-height: 52px
+
+  .customfile
+    cursor: pointer
+    height: 100%
+    overflow: hidden
+    position: relative
+    text-align: left
+    width: 100%
+
+    &:before
+      color: #bbb
+      content: "O"
+      display: block
+      font-family: $icon-font
+      font-size: 36px
+      @include transition(color .2s ease)
+
+    &:after
+      color: #bbb
+      content: "R"
+      display: none
+      font-family: $icon-font
+      font-size: 36px
+      @include animation("rotate" 2s linear infinite)
+
+  .customfile.loading
+    &:before
+      display: none
+    
+    &:after
+      display: block
+
+  .customfile:hover:before
+    color: #333
+
+  .customfile-feedback
+    display: none
+
+  .customfile-input
+    background: transparent
+    border: 0
+    cursor: pointer !important
+    display: block
+    height: 100%
+    left: -100% !important
+    opacity: 0
+    position: absolute
+    top: 0 !important
+    width: 200%
+    z-index: 9
+
+  .customfile-button
+    display: none
 
 .media_picker
   border-radius: 3px
