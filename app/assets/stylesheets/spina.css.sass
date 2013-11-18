@@ -33,6 +33,7 @@
 @import morris
 @import nprogress
 @import wysihtml5
+@import farbtastic
 
 html
   min-height: 100%
@@ -54,6 +55,9 @@ nav#primary
   text-align: center
   width: 100px
 
+  @include media($tablet)
+    width: 80px
+
   ul li a
     color: #999
     display: block
@@ -64,6 +68,9 @@ nav#primary
     text-decoration: none
     width: 100%
     @include transition(color .15s ease)
+
+    @include media($tablet)
+      padding: 12px 0
 
   ul li.active a, ul li a:hover
     color: #fff
@@ -77,6 +84,9 @@ nav#primary
     display: block
     font-size: 26px
     margin-bottom: 8px
+
+    @include media($tablet)
+      font-size: 20px
 
   ul li a[data-badge]:after
     background: $danger-color
@@ -104,12 +114,20 @@ nav#secondary
   position: fixed
   width: 300px
 
+  @include media($tablet)
+    left: 80px
+    padding-top: 12px
+    width: 200px
+
   h1
     color: #333
     font-size: 24px
     font-weight: 300
     margin-bottom: 36px
     padding: 0 30px
+
+    @include media($tablet)
+      display: none
 
   ul li
     position: relative
@@ -124,6 +142,10 @@ nav#secondary
     padding: 16px 30px
     text-decoration: none
 
+    @include media($tablet)
+      margin-left: 24px
+      padding-left: 0
+
     small
       color: #666
       display: block
@@ -132,6 +154,9 @@ nav#secondary
       line-height: 18px
       margin-top: 2px
       @include transition(color .15s ease)
+
+      @include media($tablet)
+        display: none
 
   ul li a:hover
     color: #333
@@ -153,6 +178,9 @@ nav#secondary
     margin-left: -36px
     width: 24px
     @include transition(color .15s ease)
+
+    @include media($tablet)
+      display: none
 
   ul li.active
     &:before
@@ -346,10 +374,22 @@ section#main
   margin-left: 400px
   padding: 30px 40px
 
+  @include media($tablet)
+    margin-left: 280px
+
 // Breadcrumbs
 
 #main_content_header
   min-height: 50px
+
+  @include media($tablet)
+    .button
+      overflow: hidden
+      height: 32px
+      width: 35px
+
+      &:before
+        margin-right: 200px
 
 .breadcrumbs
   color: #333
@@ -359,6 +399,9 @@ section#main
   a
     color: #999
 
+    @include media($tablet)
+      display: none
+
   .divider
     background: url(asset_path('divider.png'))
     color: #999
@@ -366,6 +409,9 @@ section#main
     height: 17px
     margin: 0 20px
     width: 6px
+
+    @include media($tablet)
+      display: none
 
 // General styles
 
