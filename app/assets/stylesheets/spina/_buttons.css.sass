@@ -96,6 +96,33 @@ button, input[type="submit"]
 .pull-right .button
   margin: 0 0 4px 4px
 
+// Pagination
+
+.pagination-container
+  background: #f9f9f9
+  border: 1px solid #eee
+  border-left: none
+  border-right: none
+  margin: 0 -40px
+  padding: 0 40px
+
+.pagination
+
+  .previous_page, .next_page, em.current, a
+    color: #999
+    display: inline-block
+    font-size: 13px
+    font-style: normal
+    font-weight: 500
+    line-height: 32px
+    padding: 0 8px
+
+    &:first-child
+      padding-left: 0
+
+  .disabled
+    display: none
+
 // Dropdowns
 
 [data-dropdown]
