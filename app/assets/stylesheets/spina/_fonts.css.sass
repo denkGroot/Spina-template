@@ -1,13 +1,27 @@
 @include font-face("Spina", "spina")
 
+@include font-face("Proxima Nova", "proximanova-light-webfont", 300)
+@include font-face("Proxima Nova", "proximanova-lightitalic-webfont", 300, italic)
+
+@include font-face("Proxima Nova", "proximanova-regular-webfont")
+@include font-face("Proxima Nova", "proximanova-regularitalic-webfont", normal, italic)
+
+@include font-face("Proxima Nova", "proximanova-semibold-webfont", 600)
+@include font-face("Proxima Nova", "proximanova-semibolditalic-webfont", 600, italic)
+
+@include font-face("Proxima Nova", "proximanova-bold-webfont", bold)
+@include font-face("Proxima Nova", "proximanova-boldit-webfont", bold, italic)
+
+@include font-face("Proxima Nova", "proximanova-extrabold-webfont", 900)
+
 // Icons
 
 [data-icon]:before
   font-family: $icon-font
   content: attr(data-icon)
   font-style: normal
-  font-weight: normal
+  font-weight: normal !important
   line-height: 1
   speak: none
-  vertical-align: middle
+  vertical-align: text-top
   -webkit-font-smoothing: antialiased
