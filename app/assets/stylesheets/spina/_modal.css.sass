@@ -24,8 +24,7 @@
     width: 320px
 
   &.modal-medium
-    max-width: none
-    width: 60%
+    max-width: 640px
 
   &.modal-large
     max-width: none
@@ -42,6 +41,14 @@
     margin: 0
     padding: 20px
 
+  header.big-header h2
+    color: #333
+    font-size: 36px
+    font-weight: 400
+    margin: 0
+    padding-top: 48px
+    text-align: center
+
   header.big-header h3
     line-height: 24px
     padding: 46px
@@ -49,6 +56,15 @@
 
     @media screen and (max-width: 480px)
       padding: 30px 20px
+
+  header.big-header p
+    color: #333
+    font-size: 18px
+    font-weight: 400
+    margin: 0
+    margin-top: 9px
+    padding-bottom: 48px
+    text-align: center
 
   header h3 strong
     color: #000
@@ -94,9 +110,28 @@
         line-height: 20px
         font-family: Consolas, Courier, monospace
 
+    &.section-divided
+      border-top: 1px solid #eee
+
     footer
       clear: both
       margin: -20px
+
+    table
+      color: #333
+      font-size: 15px
+      line-height: 24px
+
+      th
+        font-weight: 600
+        padding-right: 24px
+        text-align: left
+
+      td
+        font-weight: 400
+
+    table.table-centered
+      margin: 0 auto
 
   footer
     border-top: 1px solid #eee

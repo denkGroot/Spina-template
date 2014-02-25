@@ -35,6 +35,8 @@ showModal = (element) ->
 
   if $('#overlay').length < 1
     $('body').append('<div id="overlay"></div>')
+  else
+    $('#overlay').html('')
 
   maxheight = window.innerHeight - (window.innerHeight / 8) - 150
 
