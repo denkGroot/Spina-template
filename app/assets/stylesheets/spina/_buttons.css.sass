@@ -22,7 +22,7 @@ button, input[type="submit"]
   &.button-shaded:hover
     background: #efefef
 
-  &:active, &.button-shaded, &.button-shaded:active
+  &:active, &.button-active, &.button-shaded, &.button-shaded:active
     background: shade(#efefef, 10%)
 
   &.button-primary
@@ -35,7 +35,7 @@ button, input[type="submit"]
     &.button-shaded:hover
       background: $primary-color
 
-    &:active, &.button-shaded, &.button-shaded:active
+    &:active, &.button-active, &.button-shaded, &.button-shaded:active
       background: shade($primary-color, 10%)
 
   &.button-success
@@ -48,7 +48,7 @@ button, input[type="submit"]
     &.button-shaded:hover
       background: $success-color
 
-    &:active, &.button-shaded, &.button-shaded:active
+    &:active, &.button-active, &.button-shaded, &.button-shaded:active
       background: shade($success-color, 10%)
 
   &.button-danger
@@ -61,7 +61,7 @@ button, input[type="submit"]
     &:hover
       color: #333
 
-    &:active
+    &:active, &.button-active
       color: #111
 
   &:before
@@ -99,7 +99,7 @@ button, input[type="submit"]
       border: 1px solid #bbb
       color: #666
 
-    &:active
+    &:active, &.button-active
       border: 1px solid #aaa
       color: #444
 
