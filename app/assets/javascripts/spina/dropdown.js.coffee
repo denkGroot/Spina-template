@@ -3,7 +3,7 @@ $(document).on 'click', 'body.dropdown', ->
 
 $(document).on 'click', '[data-trigger="dropdown"]', ->
   trigger = $(this)
-  dropdown = trigger.siblings('ul')
+  dropdown = $(trigger.attr('data-target'))
   body = $('body')
 
   if body.hasClass('dropdown')

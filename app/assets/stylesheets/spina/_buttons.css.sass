@@ -19,7 +19,10 @@ button, input[type="submit"]
   &:hover
     background: tint(#efefef, 20%)
 
-  &:active
+  &.button-shaded:hover
+    background: #efefef
+
+  &:active, &.button-active, &.button-shaded, &.button-shaded:active
     background: shade(#efefef, 10%)
 
   &.button-primary
@@ -29,7 +32,10 @@ button, input[type="submit"]
     &:hover
       background: tint($primary-color, 20%)
 
-    &:active
+    &.button-shaded:hover
+      background: $primary-color
+
+    &:active, &.button-active, &.button-shaded, &.button-shaded:active
       background: shade($primary-color, 10%)
 
   &.button-success
@@ -39,7 +45,10 @@ button, input[type="submit"]
     &:hover
       background: tint($success-color, 20%)
 
-    &:active
+    &.button-shaded:hover
+      background: $success-color
+
+    &:active, &.button-active, &.button-shaded, &.button-shaded:active
       background: shade($success-color, 10%)
 
   &.button-danger
@@ -52,12 +61,15 @@ button, input[type="submit"]
     &:hover
       color: #333
 
-    &:active
+    &:active, &.button-active
       color: #111
 
   &:before
     margin-right: 8px
     vertical-align: text-top
+
+  &.icon-only:before
+    margin-right: 0
 
   &.button-large
     border-radius: 4px
@@ -87,7 +99,7 @@ button, input[type="submit"]
       border: 1px solid #bbb
       color: #666
 
-    &:active
+    &:active, &.button-active
       border: 1px solid #aaa
       color: #444
 
@@ -96,6 +108,25 @@ button, input[type="submit"]
 
 .pull-right .button
   margin: 0 0 4px 4px
+
+// Button groups
+
+.button-group
+  .button
+    border-radius: 0
+    float: left
+    margin-right: 0
+
+  .button:first-child
+    border-radius: 3px 0 0 3px
+
+  .button:last-child
+    border-radius: 0 3px 3px 0
+
+  &:after
+    clear: both
+    content: ""
+    display: block
 
 // Pagination
 
@@ -139,7 +170,6 @@ button, input[type="submit"]
     margin-top: 6px
     padding: 6px 0
     position: absolute
-    right: 0px
     width: 200px
     z-index: 999
 
@@ -148,7 +178,7 @@ button, input[type="submit"]
     display: block
     height: 0
     position: absolute
-    right: 11px
+    left: 11px
     top: -8px
     width: 0
     border-bottom: 8px solid #aaa
@@ -160,12 +190,23 @@ button, input[type="submit"]
     display: block
     height: 0
     position: absolute
-    right: 12px
+    left: 12px
     top: -7px
     width: 0
     border-bottom: 7px solid #fff
     border-left: 7px solid transparent
     border-right: 7px solid transparent
+
+  ul.align-right
+    right: 0px
+
+  ul.align-right:before
+    left: auto
+    right: 11px
+
+  ul.align-right:after
+    left: auto
+    right: 12px
 
   ul.open
     display: block
@@ -178,9 +219,12 @@ button, input[type="submit"]
     color: #333
     display: block
     font-size: 14px
-    padding: 8px 18px
+    padding: 8px 16px
     text-decoration: none
 
   ul li a:hover
     background-color: $primary-color
     color: #fff
+
+  ul li a:before
+    margin-right: 8px
