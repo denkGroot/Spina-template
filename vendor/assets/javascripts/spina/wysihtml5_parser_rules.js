@@ -182,7 +182,7 @@ var wysihtml5ParserRules = {
             },
             "set_attributes": {
                 "rel": "nofollow",
-                "target": "_blank"
+                "target": "_self"
             }
         },
         "img": {
