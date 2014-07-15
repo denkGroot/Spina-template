@@ -282,6 +282,41 @@ nav.tabs
     &:before
       color: $danger-color
 
+// Permanent notice
+.permanent-notice
+  background: #eee
+  border-bottom: 1px solid #ddd
+  color: #333
+  margin: -30px -40px 30px -40px
+  padding: 0 40px
+  position: relative
+
+  &:before
+    font-size: 16px
+    left: 14px
+    opacity: .25
+    position: absolute
+    top: 12px
+
+  p
+    font-size: 13px
+    line-height: 18px
+    margin: 0
+    padding: 12px 0
+
+    small
+      display: block
+      font-size: 12px
+      font-weight: 400
+
+  &.permanent-notice-info
+    background: #eef6fe
+    border-color: #def
+    color: #12659b
+
+    p
+      color: inherit
+
 // Filters
 
 .filters
