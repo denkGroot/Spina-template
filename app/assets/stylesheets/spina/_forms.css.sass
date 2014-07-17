@@ -434,6 +434,7 @@ input.datepicker
 
   .image
     margin-right: 2px
+    @include transition(opacity .2s ease)
   
   &:before
     background: rgba(255, 255, 255, .5)
@@ -459,5 +460,5 @@ input.datepicker
       margin-right: 6px
       vertical-align: middle
 
-.media_picker:hover:before
-  opacity: 1
+.media_picker:hover .image
+  opacity: .75
