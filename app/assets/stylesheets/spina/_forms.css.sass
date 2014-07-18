@@ -431,10 +431,6 @@ input.datepicker
   height: 100%
   margin-top: 2px
   position: relative
-
-  .image
-    margin-right: 2px
-    @include transition(opacity .2s ease)
   
   &:before
     background: rgba(255, 255, 255, .5)
@@ -459,6 +455,18 @@ input.datepicker
       display: inline-block
       margin-right: 6px
       vertical-align: middle
+
+ul.sortable-grid 
+  .image, .sortable-placeholder
+    border-radius: 3px
+    display: inline-block
+    height: 85px
+    margin-right: 4px
+    overflow: hidden
+    width: 152px
+
+  .sortable-placeholder
+    background: #f5f5f5
 
 .media_picker:hover .image
   opacity: .75
