@@ -14,9 +14,28 @@
   padding: 0
   position: relative
 
+  .dd-placeholder
+    position: relative
+
+    &:after
+      border: 1px dashed #ddd
+      content: " "
+      display: block
+      height: 100%
+      margin-left: 0px
+      top: 0px
+      width: 100%
+      @include box-sizing(border-box)
+
   .dd-list
     background: #f9f9f9
     border-top: 1px solid #ddd
+
+    .dd-placeholder
+      background: #f9f9f9
+
+      &:after
+        margin-left: 60px
 
     .dd-item:last-child
       border-bottom: none
@@ -33,6 +52,9 @@
 
       .dd-placeholder
         background: #f1f1f1
+
+        &:after
+          margin-left: 90px
 
 .dd-collapsed .dd-list
   display: none

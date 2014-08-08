@@ -55,7 +55,6 @@ $(document).on 'keyup + change', '.table-container .search-input input', ->
 $(document).on 'change', '.dd', ->
   serialized = $(this).nestable('serialize')
   sort_url = $(this).data('sort-url')
-  console.log serialized
   $.post sort_url, { list: serialized }
 
 # Datatables
