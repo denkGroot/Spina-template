@@ -177,7 +177,7 @@ button, input[type="submit"]
 [data-dropdown]
   position: relative
 
-  ul
+  ul, .sliding-dropdown
     background: #fff
     border: 1px solid #ccc
     border-radius: 3px
@@ -190,7 +190,7 @@ button, input[type="submit"]
     width: 200px
     z-index: 999
 
-  ul:before
+  ul:before, .sliding-dropdown:before
     content: ""
     display: block
     height: 0
@@ -202,7 +202,7 @@ button, input[type="submit"]
     border-left: 8px solid transparent
     border-right: 8px solid transparent          
 
-  ul:after
+  ul:after, .sliding-dropdown:after
     content: ""
     display: block
     height: 0
@@ -245,3 +245,90 @@ button, input[type="submit"]
 
   ul li a:before
     margin-right: 8px
+
+[data-dropdown] .sliding-dropdown
+  padding: 0
+  width: 300px
+
+  .slide-controls
+    border-bottom: 1px solid #eaeaea
+    color: #333
+    font-size: 14px
+    font-weight: 600
+    line-height: 44px
+    text-align: center
+
+    .slide-title
+      display: none
+
+    .slide-title.active
+      display: block
+
+    .previous, .next
+      color: #666
+      font-size: 12px
+      padding: 0 12px
+      position: absolute
+      top: 0px
+
+      &:hover
+        color: #333
+
+      &.muted
+        color: #ccc
+        cursor: default
+
+    .previous
+      left: 0px
+
+    .next
+      right: 0px
+
+  .slide-controls.open
+    display: block
+
+  .slide
+    display: none
+    text-align: center
+
+    &.active
+      display: block
+
+    p
+      color: #333
+      font-size: 14px
+      font-weight: 400
+      margin: 16px
+
+    p.muted
+      color: #999
+
+    .button
+      border-top-left-radius: 0
+      border-top-right-radius: 0
+      margin: -1px
+      width: 300px
+
+      &.button-primary
+        background: #f0f9fe
+        border: 1px solid #cee5f2
+        color: #0091e5
+
+        &:hover
+          background: #0091e5
+          border: 1px solid #0091e5
+          color: #fff
+
+  .slide-dots
+    margin: 12px
+    text-align: center
+
+    .slide-dot
+      background: #ccc
+      border-radius: 2px
+      display: inline-block
+      height: 4px
+      width: 4px
+
+      &.active
+        background: #333
