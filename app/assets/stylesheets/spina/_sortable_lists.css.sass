@@ -8,6 +8,32 @@
   & > .dd-list > .dd-item:first-child
     border-top: none
 
+.dd-item-inner.dd-handle
+  cursor: move
+
+.dd-item-inner .sortable-link
+  @include transform(translateX(-26px))
+  @include transition(all .2s ease)
+
+.dd-item-inner.dd-handle .sortable-link
+  @include transform(translateX(0))
+
+.dd-item-inner:before
+  color: #ccc
+  content: "7"
+  display: inline-block
+  font-family: $icon-font
+  height: 18px
+  opacity: 0
+  vertical-align: middle
+  width: 26px
+  @include transform(translateX(-26px))
+  @include transition(all .2s ease)
+
+.dd-item-inner.dd-handle:before
+  opacity: 1
+  @include transform(translateX(0))
+
 .dd-list
   list-style: none
   margin: 0

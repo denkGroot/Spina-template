@@ -1,4 +1,4 @@
-$(document).on 'click', '.tabs li a', ->
+$(document).on 'click', '.tabs li a[href^="#"]', ->
   link = $(this)
   tabs = link.parents('.tabs')
   
