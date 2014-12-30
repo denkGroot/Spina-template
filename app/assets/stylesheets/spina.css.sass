@@ -205,24 +205,31 @@ nav#secondary
 // Tabs
 
 nav.tabs
+  border-bottom: 1px solid #ddd
+  margin: 0 -40px 30px -40px
+  padding: 0 40px 0 24px
+
   ul li
     display: inline
 
   ul li a
+    border: 1px solid transparent
     color: #444
     display: inline-block
     font-size: 14px
     font-weight: 600
-    padding: 20px
+    margin-bottom: -1px
+    margin-top: 20px
+    padding: 12px 16px
     text-decoration: none
-
-  ul li a:first-child
-    padding-left: 0
 
   ul li a:hover
     color: #222
 
   ul li.active a
+    border-color: #ddd
+    border-bottom: 1px solid #fff
+    border-radius: 3px 3px 0 0
     color: $primary-color
 
 .tab-content
