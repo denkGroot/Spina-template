@@ -1,5 +1,5 @@
 module Spina
   module Template
-    VERSION = "0.1.32"
+    VERSION = "0.2.0"
   end
 end
