@@ -32,10 +32,10 @@ toggleSwitch = (e) ->
     checkbox.removeClass('active')
     checkbox.removeClass('activated')
     checkbox.addClass('deactivated')
-    input.attr("checked", false)
+    input.prop("checked", false)
   else
     checkbox.addClass('activated')
     checkbox.removeClass('deactivated')
-    input.attr("checked", true)
+    input.prop("checked", true)
 
   return false
