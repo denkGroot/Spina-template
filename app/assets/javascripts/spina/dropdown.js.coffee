@@ -9,11 +9,11 @@ $(document).on 'click', '[data-trigger="dropdown"]', ->
   if body.hasClass('dropdown')
     trigger.removeClass('button-active')
     body.removeClass('dropdown')
-    dropdown.hide()
+    dropdown.removeClass('animated fadeInDown')
   else
     trigger.addClass('button-active')
     body.addClass('dropdown')
-    dropdown.show()
+    dropdown.addClass('animated fadeInDown')
 
   return false
 
@@ -59,6 +59,6 @@ $(document).on 'click', '.slide-controls .previous, .slide-controls .next', (e) 
 
 closeDropdown = ->
   $('body').removeClass('dropdown')
-  $('[data-dropdown] ul, [data-dropdown] .sliding-dropdown').hide()
+  $('[data-dropdown] ul, [data-dropdown] .sliding-dropdown').removeClass('animated fadeInDown')
   $('[data-trigger="dropdown"]').removeClass('button-active')
   return false

@@ -181,6 +181,7 @@ button, input[type="submit"]
     background: #fff
     border: 1px solid #ccc
     border-radius: 3px
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .15)
     display: none
     list-style: none
     margin: 0
@@ -189,6 +190,10 @@ button, input[type="submit"]
     position: absolute
     width: 200px
     z-index: 999
+
+    &.animated
+      display: block
+      @include animation-duration(.3s)
 
   ul:before, .sliding-dropdown:before
     content: ""
@@ -224,9 +229,6 @@ button, input[type="submit"]
   ul.align-right:after
     left: auto
     right: 12px
-
-  ul.open
-    display: block
 
   ul li.divider
     border-top: 1px solid #e9e9e9
