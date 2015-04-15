@@ -308,6 +308,107 @@ input.datepicker
     z-index: 2
     @include appearance(none)
 
+// Structure form
+
+.structure-form
+  margin-bottom: 40px
+  position: relative
+  @include display(flex)
+
+  .structure-form-menu
+    box-sizing: content-box
+    min-width: 240px
+    width: 240px
+
+    label
+      display: block
+      font-size: 14px
+      padding: 12px 40px
+      text-transform: none
+
+    ul
+      border-right: 1px solid #ddd
+      position: relative
+
+    ul:before, ul:after
+      content: " "
+      height: 40px
+      position: absolute
+      right: -1px
+      top: -40px
+      width: 1px
+      @include linear-gradient(transparent, #ddd)
+
+    ul:after
+      bottom: -40px
+      top: auto
+      @include linear-gradient(bottom, transparent, #ddd)
+
+    ul li a
+      color: #333
+      cursor: pointer
+      display: block
+      height: 50px
+      line-height: 50px
+      outline: none
+      padding-left: 40px
+
+      &:hover
+        background: #f9f9f9
+
+      i
+        color: #ddd
+        font-size: 16px
+        margin-right: 8px
+        vertical-align: middle
+
+    ul li.active a
+      color: $primary-color
+
+    ul li.active
+      margin-right: -1px
+      position: relative
+
+      a
+        background: #fff
+
+      &:before
+        border-bottom: 1px solid #ddd
+        border-bottom-right-radius: 3px
+        border-right: 1px solid #ddd
+        content: " "
+        height: 10px
+        position: absolute
+        right: 0px
+        top: -10px
+        width: 100%
+
+      &:after
+        bottom: -10px
+        border-right: 1px solid #ddd
+        border-top: 1px solid #d5d5d5
+        border-top-right-radius: 3px
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075)
+        content: " "
+        height: 10px
+        right: 0px
+        position: absolute
+        width: 100%
+
+  .structure-form-content
+    padding-left: 12px
+    padding-right: 40px
+    width: 100%
+
+    .structure-form-pane
+      display: none
+
+  .add_structure
+    bottom: -36px
+    left: 200px
+    outline: none
+    position: absolute
+
 // Custom file input
 
 .gallery .item
