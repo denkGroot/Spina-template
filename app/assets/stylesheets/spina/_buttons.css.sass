@@ -14,7 +14,7 @@ button, input[type="submit"]
   margin: 0 4px 4px 0
   padding: 0 16px
   text-decoration: none
-  @include transition(all .2s ease)
+  @include transition(all .3s ease)
 
   &:hover
     background: tint(#efefef, 20%)
@@ -24,6 +24,9 @@ button, input[type="submit"]
 
   &:active, &.button-active, &.button-shaded, &.button-shaded:active
     background: shade(#efefef, 10%)
+
+  &:focus
+    outline: none
 
   &.button-primary
     background: $primary-color
@@ -110,6 +113,19 @@ button, input[type="submit"]
 
   &.button-round
     border-radius: 21px
+
+  &.button-saving
+    background: #999 !important
+
+  &.button-saving:before
+    display: inline-block
+    @include animation(rotate 3.0s linear infinite)
+
+@include keyframes(rotate) 
+  from
+    @include transform(rotate(0deg))
+  to
+    @include transform(rotate(360deg))
 
 .pull-right .button
   margin: 0 0 4px 4px
