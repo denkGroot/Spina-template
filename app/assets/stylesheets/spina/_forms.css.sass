@@ -344,7 +344,14 @@ input.datepicker
       top: auto
       @include linear-gradient(bottom, transparent, #ddd)
 
-    ul li a
+    ul li.sortable-placeholder
+      background: #f9f9f9
+
+    ul li .structure-item-remove
+      color: #999
+      float: right
+
+    ul li a, ul li.sortable-placeholder
       color: #333
       cursor: pointer
       display: block
@@ -408,6 +415,9 @@ input.datepicker
     left: 200px
     outline: none
     position: absolute
+
+  .structure-form-part
+    padding: 5px 0
 
 // Custom file input
 
