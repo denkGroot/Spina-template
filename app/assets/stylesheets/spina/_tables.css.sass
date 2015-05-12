@@ -119,14 +119,14 @@ table.table.table-form
 .dataTable
   th.sorting_desc
     &:after
-      content: "0"
-      font-family: $icon-font
+      @include fa-icon
+      @extend .fa-caret-down:before
       float: right
 
   th.sorting_asc
     &:after
-      content: "1"
-      font-family: $icon-font
+      @include fa-icon
+      @extend .fa-caret-up:before
       float: right
 
 .dataTables_paginate

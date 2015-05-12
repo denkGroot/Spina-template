@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "bourbon", "~> 3.2"
   spec.add_dependency "neat", "~> 1.5"
+  spec.add_dependency "font-awesome-sass"
   spec.add_dependency "coffee-rails"
   spec.add_dependency 'jquery-fileupload-rails'
 end

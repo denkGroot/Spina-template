@@ -19,10 +19,10 @@
   @include transform(translateX(0))
 
 .dd-item-inner:before
+  @include fa-icon
+  @extend .fa-bars:before
   color: #ccc
-  content: "7"
   display: inline-block
-  font-family: $icon-font
   height: 18px
   opacity: 0
   vertical-align: middle
