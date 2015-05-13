@@ -2,7 +2,6 @@ require "spina/template/version"
 require 'bourbon'
 require 'neat'
 require 'jquery-fileupload-rails'
-require 'font-awesome-sass'
 
 module Spina
   module Template

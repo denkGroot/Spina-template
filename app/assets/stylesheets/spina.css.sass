@@ -14,8 +14,8 @@
 @import spina/grid
 
 // Icons
-@import font-awesome-sprockets
-@import font-awesome
+@import spina/icons_spina
+@import spina/fonts
 
 // Animations
 @import spina/animate
@@ -85,7 +85,7 @@ nav#primary
     left: 0
     position: absolute
 
-  ul li a i.#{$fa-css-prefix}
+  ul li a i.icon
     display: block
     font-size: 26px
     margin-bottom: 8px
@@ -165,16 +165,16 @@ nav#secondary
   ul li a:hover
     color: #333
 
-    small, i.#{$fa-css-prefix}
+    small, i.icon
       color: inherit
 
   ul li.active a
     color: $primary-color
 
-    small, i.#{$fa-css-prefix}
+    small, i.icon
       color: inherit
 
-  ul li a i.#{$fa-css-prefix}
+  ul li a i.icon
     color: #666
     display: block
     float: left
@@ -302,7 +302,7 @@ nav.tabs
   padding: 0 40px
   position: relative
 
-  i.#{$fa-css-prefix}
+  i.icon
     font-size: 16px
     left: 14px
     opacity: .25

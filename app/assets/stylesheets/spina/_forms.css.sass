@@ -144,19 +144,18 @@ fieldset
   position: relative
 
   input
-    padding-left: 28px
+    padding-left: 30px
     padding-right: 28px
 
 .search-input:before, .clear-input
-  @include fa-icon
-  @extend .fa-search
   color: #999
+  @extend .icon, .icon-search
   display: block
-  font-size: 14px
+  font-size: 13px
   font-weight: 400
-  left: 9px
+  left: 11px
   position: absolute
-  top: 10px
+  top: 13px
 
 .clear-input
   color: #ccc
@@ -274,8 +273,7 @@ input.datepicker
   overflow: hidden
   padding: 0
   position: relative
-  @extend .fa
-  @extend .fa-caret-down
+  @extend .icon, .icon-caret-down
   @include transition(border .2s ease)
 
   &:hover
@@ -444,16 +442,14 @@ input.datepicker
       font-weight: normal
       line-height: 100px
       vertical-align: middle
-      @extend .fa-cloud-upload:before
-      @include fa-icon
+      @extend .icon, .icon-upload-outline
       font-size: 42px
       @include transition(color .2s ease)
 
     &:after
       color: #bbb
       font-weight: normal
-      @extend .fa-refresh:before
-      @include fa-icon
+      @extend .icon:before, .icon-refresh:before
       display: none
       font-size: 42px
       line-height: 100px
@@ -503,16 +499,15 @@ input.datepicker
       color: #bbb
       display: block
       font-weight: 400
-      @extend .fa-cloud-upload
-      @include fa-icon
+      padding: 6px 0
+      @extend .icon:before, .icon-upload-outline:before
       font-size: 28px
       vertical-align: middle
       @include transition(color .2s ease)
 
     &:after
       color: #bbb
-      @extend .fa-refresh
-      @include fa-icon
+      @extend .icon, .icon-refresh
       display: none
       font-size: 36px
       @include animation("rotate" 2s linear infinite)
