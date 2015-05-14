@@ -1,7 +1,7 @@
 {
   "checksum": {
-    "previous": "7ddd15067e340d4dd3c7fe252486195395bebff0ea7a375ed057619cc2056507",
-    "current": "7ddd15067e340d4dd3c7fe252486195395bebff0ea7a375ed057619cc2056507"
+    "previous": "327fc348f24f4e1ff0f8d8e9b989aef3c2c5333852d7318b7d9e90c8c70d913f",
+    "current": "327fc348f24f4e1ff0f8d8e9b989aef3c2c5333852d7318b7d9e90c8c70d913f"
   },
   "fonts": [
     "app/assets/fonts/spina/icons_spina.ttf",
@@ -13,6 +13,10 @@
     "bars": {
       "codepoint": 61710,
       "source": "app/assets/icons/spina/bars.svg"
+    },
+    "bold": {
+      "codepoint": 61728,
+      "source": "app/assets/icons/spina/bold.svg"
     },
     "brush": {
       "codepoint": 61717,
@@ -58,6 +62,10 @@
       "codepoint": 61727,
       "source": "app/assets/icons/spina/chevron-up.svg"
     },
+    "code": {
+      "codepoint": 61733,
+      "source": "app/assets/icons/spina/code.svg"
+    },
     "cog": {
       "codepoint": 61701,
       "source": "app/assets/icons/spina/cog.svg"
@@ -86,6 +94,18 @@
       "codepoint": 61714,
       "source": "app/assets/icons/spina/inbox-outline.svg"
     },
+    "italic": {
+      "codepoint": 61729,
+      "source": "app/assets/icons/spina/italic.svg"
+    },
+    "link": {
+      "codepoint": 61732,
+      "source": "app/assets/icons/spina/link.svg"
+    },
+    "list-ul": {
+      "codepoint": 61731,
+      "source": "app/assets/icons/spina/list-ul.svg"
+    },
     "mail-outline": {
       "codepoint": 61713,
       "source": "app/assets/icons/spina/mail-outline.svg"
@@ -97,6 +117,10 @@
     "pencil-outline": {
       "codepoint": 61709,
       "source": "app/assets/icons/spina/pencil-outline.svg"
+    },
+    "picture-o": {
+      "codepoint": 61734,
+      "source": "app/assets/icons/spina/picture-o.svg"
     },
     "plus": {
       "codepoint": 61707,
