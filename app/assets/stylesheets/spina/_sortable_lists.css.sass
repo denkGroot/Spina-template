@@ -136,7 +136,7 @@
   float: left
   font-size: 9px
   height: 52px
-  line-height: 20px
+  line-height: 52px
   overflow: hidden
   margin-left: 10px
   padding: 0
@@ -145,16 +145,17 @@
   text-indent: 100%
   white-space: nowrap
   width: 30px
+  z-index: 1
 
   &:before
+    @extend .icon, .icon-plus
     color: $primary-color
-    content: "t"
     display: block
-    font-family: $icon-font
+    line-height: 52px !important
     position: absolute
     text-align: center
     text-indent: 0
     width: 100%
 
   &[data-action="collapse"]:before
-    content: "X"
+    @extend .icon, .icon-min
