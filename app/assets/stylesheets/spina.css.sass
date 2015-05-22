@@ -52,21 +52,23 @@ body
 // Primary navigation
 
 nav#primary
-  background: #111
+  background: #444882
   height: 100%
   padding-top: 10px
   position: relative
   text-align: center
-  width: 100px
+  width: 80px
+  @include linear-gradient(#3b3f74, #7a76ad)
 
   @include media($tablet)
     width: 80px
 
   ul li a
-    color: #999
+    color: #fff
     display: block
     font-size: 10px
     font-weight: 700
+    opacity: .6
     padding: 20px 0
     position: relative
     text-decoration: none
@@ -78,7 +80,7 @@ nav#primary
       padding: 12px 0
 
   ul li.active a, ul li a:hover
-    color: #fff
+    opacity: 1
 
   ul li.bottom a
     bottom: 0
@@ -87,12 +89,16 @@ nav#primary
 
   ul li a i.icon
     display: block
-    font-size: 26px
+    font-size: 28px
     margin-bottom: 8px
     text-transform: none
 
     @include media($tablet)
       font-size: 20px
+
+  ul li:first-child a i.icon
+    font-size: 32px
+    margin-bottom: 3px
 
   ul li a[data-badge]:after
     background: $danger-color
@@ -112,7 +118,7 @@ nav#primary
 // Secondary navigation
 
 nav#secondary
-  background: #f5f5f5
+  background: #f9f9f9
   border-right: 1px solid #ccc
   height: 100%
   padding: 30px 0
@@ -142,9 +148,9 @@ nav#secondary
     font-size: 15px
     font-weight: 600
     line-height: 15px
-    margin-left: 36px
-    padding: 16px 30px
+    padding: 16px 30px 16px 66px
     text-decoration: none
+    @include transition(all .2s ease)
 
     @include media($tablet)
       margin-left: 24px
@@ -163,12 +169,10 @@ nav#secondary
         display: none
 
   ul li a:hover
-    color: #333
-
-    small, i.icon
-      color: inherit
+    background: #f1f1f1
 
   ul li.active a
+    background: #f1f1f1
     color: $primary-color
 
     small, i.icon
@@ -202,7 +206,7 @@ nav#secondary
       position: absolute
       right: -11px
       top: 33%
-      @include triangle(22px, #f5f5f5, right)
+      @include triangle(22px, #f1f1f1, right)
 
 // Tabs
 
@@ -454,6 +458,9 @@ section#main
 #main_content_header
   min-height: 50px
 
+  .preview-website i
+    vertical-align: bottom
+
   @include media($tablet)
     .button
       overflow: hidden
@@ -521,3 +528,17 @@ label
 
 .pull-right
   float: right
+
+.spina-logo
+  bottom: 0px
+  opacity: .5
+  padding: 20px
+  position: absolute
+  right: 0px
+  @include transition(opacity .2s ease)
+
+  &:hover
+    opacity: 1
+
+  img
+    display: block

@@ -120,6 +120,15 @@
       font-weight: 400
       margin-left: 13px
 
+  .pull-right a
+    opacity: 0
+    @include transform(translateX(50px))
+    @include transition(all .4s ease)
+
+  &:hover .pull-right a
+    opacity: 1
+    @include transform(translateX(10px))
+
 .dd-dragel
   pointer-events: none
   position: absolute
