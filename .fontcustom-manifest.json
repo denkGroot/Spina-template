@@ -1,7 +1,7 @@
 {
   "checksum": {
-    "previous": "6d3a96818a3678898b48bbcc609082b7175852b118b86782cc821c3b67496b63",
-    "current": "6d3a96818a3678898b48bbcc609082b7175852b118b86782cc821c3b67496b63"
+    "previous": "352ec2bd099578cec26c59ee25b25778c6c6a412b9c4326d2b405df12473253e",
+    "current": "352ec2bd099578cec26c59ee25b25778c6c6a412b9c4326d2b405df12473253e"
   },
   "fonts": [
     "app/assets/fonts/spina/icons_spina.ttf",
@@ -21,6 +21,10 @@
     "brush": {
       "codepoint": 61717,
       "source": "app/assets/icons/spina/brush.svg"
+    },
+    "camera": {
+      "codepoint": 61741,
+      "source": "app/assets/icons/spina/camera.svg"
     },
     "caret-down": {
       "codepoint": 61720,
@@ -85,6 +89,10 @@
     "document": {
       "codepoint": 61696,
       "source": "app/assets/icons/spina/document.svg"
+    },
+    "dots": {
+      "codepoint": 61742,
+      "source": "app/assets/icons/spina/dots.svg"
     },
     "eye": {
       "codepoint": 61740,

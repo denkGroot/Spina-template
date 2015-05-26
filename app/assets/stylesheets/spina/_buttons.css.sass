@@ -331,13 +331,14 @@ button, input[type="submit"]
       width: 300px
 
       &.button-primary
-        background: #f0f9fe
-        border: 1px solid #cee5f2
-        color: #0091e5
+        background: lighten($primary-color, 40%)
+        border: 1px solid lighten($primary-color, 30%)
+        color: $primary-color
+        text-transform: lowercase
 
         &:hover
-          background: #0091e5
-          border: 1px solid #0091e5
+          background: $primary-color
+          border: 1px solid $primary-color
           color: #fff
 
   .slide-dots
