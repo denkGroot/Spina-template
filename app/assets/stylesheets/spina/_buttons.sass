@@ -10,10 +10,10 @@ button, input[type="submit"]
   display: inline-block
   font-size: 14px
   font-weight: bold
-  line-height: 36px
+  line-height: 20px
   margin: 0 4px 4px 0
   outline: none
-  padding: 0 16px
+  padding: 8 16px
   text-decoration: none
   @include transition(all .3s ease)
 
@@ -75,32 +75,25 @@ button, input[type="submit"]
     margin-right: 0
 
   &.icon-mini:before
-    font-size: 8px
-    line-height: 12px
     margin-right: 4px
 
   &.button-large
     border-radius: 4px
-    font-size: 15px
-    line-height: 42px
-    padding: 0 18px
+    padding: 11px 18px
 
     &:before
       margin-right: 10px
 
   &.button-small
     font-size: 13px
-    line-height: 32px
-    padding: 0 12px
+    padding: 6px 12px
 
     i.icon
-      font-size: 16px
       margin-right: 4px
 
   &.button-mini
     font-size: 12px
-    line-height: 26px
-    padding: 0 10px
+    padding: 3px 10px
 
   &.button-hollow
     background: none
@@ -125,7 +118,7 @@ button, input[type="submit"]
     display: inline-block
     @include animation(rotate 3.0s linear infinite)
 
-@include keyframes(rotate) 
+@include keyframes(rotate)
   from
     @include transform(rotate(0deg))
   to
@@ -183,8 +176,8 @@ button, input[type="submit"]
     font-size: 14px
     font-style: normal
     font-weight: 600
-    line-height: 32px
-    padding: 0 8px
+    line-height: 20px
+    padding: 6px 8px
 
     &:first-child
       padding-left: 0
@@ -225,7 +218,7 @@ button, input[type="submit"]
     width: 0
     border-bottom: 8px solid #aaa
     border-left: 8px solid transparent
-    border-right: 8px solid transparent          
+    border-right: 8px solid transparent
 
   ul:after, .sliding-dropdown:after
     content: ""
