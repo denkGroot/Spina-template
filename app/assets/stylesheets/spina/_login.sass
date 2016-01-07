@@ -1,16 +1,21 @@
 #login_container
-  background: url(asset-path('spina/bg.jpg'))
-  background-size: cover
-  background-position: center
+  background: tint($primary-color, 90%)
   display: block
   height: 100%
   position: fixed
   width: 100%
 
 #login_wrapper
-  border-radius: 3px
   margin: 50px auto
   max-width: 280px
+
+  .notification
+    padding: 0px
+    text-align: center
+
+  img
+    display: block
+    margin: 0 auto 25px auto
 
   input, button
     box-shadow: none
@@ -24,7 +29,7 @@
 
 
   button
-    padding: 9px 14px
+    padding: 12px 14px
     
     &:before
       font-size: 26px
