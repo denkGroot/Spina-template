@@ -1,0 +1,6 @@
+{
+  "name": "spina",
+  "dependencies": {
+    "trix": "harmdewit/trix"
+  }
+}
