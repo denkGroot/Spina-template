@@ -1,3 +1,56 @@
+// Horizontal form
+.horizontal-form
+  .horizontal-form-group
+    margin-bottom: 30px
+    @include display(flex)
+
+  .horizontal-form-label
+    color: #333
+    font-size: 13px
+    font-weight: 600
+    line-height: 18px
+    padding-left: 40px
+    width: 240px
+    @include justify-content(center)
+    @include display(flex)
+    @include flex-direction(column)
+
+    small
+      color: #666
+      display: block
+      font-size: 13px
+      font-weight: normal
+
+  .horizontal-form-content
+    padding-right: 40px
+    @include flex(1)
+    @include align-self(flex-start)
+
+  .image
+    border-radius: 3px
+    display: inline-block
+    height: 85px
+    overflow: hidden
+    width: 152px
+
+    img
+      display: block
+      height: 100%
+      width: 100%
+
+  .attachment
+    display: inline-block
+    margin: 10px 25px 10px 0
+
+    &:before
+      content: "S"
+      font-family: $icon-font
+      font-size: 28px
+      margin-right: 10px
+      vertical-align: middle
+
+// Inputs
+
 #{$all-text-inputs}, textarea, .text-input
   border: 1px solid #c3c3c3
   border-radius: 3px
@@ -282,7 +335,6 @@ input.datepicker
 
   &:before
     color: #666
-    font-family: "FontAwesome"
     font-size: 14px
     font-weight: normal
     line-height: 28px
@@ -299,7 +351,8 @@ input.datepicker
     color: #666
     cursor: pointer
     display: inline-block
-    font-size: 14px
+    font-family: $font-family
+    font-size: 13px
     font-weight: 600
     line-height: 16px
     margin: 0
@@ -320,7 +373,6 @@ input.datepicker
   .structure-form-menu
     box-sizing: content-box
     min-width: 240px
-    width: 240px
 
     label
       display: block
@@ -406,7 +458,6 @@ input.datepicker
 
   .structure-form-content
     padding-left: 12px
-    padding-right: 40px
     width: 100%
 
     .structure-form-pane
@@ -552,7 +603,6 @@ input.datepicker
   border-radius: 3px
   color: #333
   display: block
-  height: 100%
   margin-top: 2px
   position: relative
 
