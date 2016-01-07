@@ -3,16 +3,16 @@
 @include font-face("icons_spina", "spina/icons_spina")
 
 .icon
+  display: inline-block
   vertical-align: middle
-
-.icon:before
+  font-size: inherit
+  line-height: inherit // NOTE: should be 1
   font-family: "icons_spina" !important
   font-style: normal !important
-  font-weight: normal !important
   font-variant: normal !important
-  line-height: 1
+  font-weight: normal !important
   text-transform: none !important
   speak: none
-  vertical-align: middle
+  text-rendering: auto
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
