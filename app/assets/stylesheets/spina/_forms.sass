@@ -9,7 +9,6 @@
     font-size: 13px
     font-weight: 600
     line-height: 18px
-    padding-left: 40px
     width: 240px
     @include justify-content(center)
     @include display(flex)
@@ -22,7 +21,6 @@
       font-weight: normal
 
   .horizontal-form-content
-    padding-right: 40px
     @include flex(1)
     @include align-self(flex-start)
 
@@ -356,12 +354,13 @@ input.datepicker
 
 .structure-form
   margin-bottom: 40px
+  margin-left: -40px
   position: relative
   @include display(flex)
 
   .structure-form-menu
     box-sizing: content-box
-    min-width: 240px
+    min-width: 280px
 
     label
       display: block
@@ -380,12 +379,12 @@ input.datepicker
       right: -1px
       top: -40px
       width: 1px
-      @include linear-gradient(transparent, #ddd)
+      @include linear-gradient(rgba(255, 255, 255, 0), #ddd)
 
     ul:after
       bottom: -40px
       top: auto
-      @include linear-gradient(bottom, transparent, #ddd)
+      @include linear-gradient(bottom, rgba(255, 255, 255, 0), #ddd)
 
     ul li .structure-item-remove
       color: #999
@@ -395,6 +394,8 @@ input.datepicker
       color: #333
       cursor: pointer
       display: block
+      font-weight: 600
+      font-size: 13px
       height: 50px
       line-height: 50px
       outline: none
