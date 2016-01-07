@@ -1,6 +1,6 @@
 {
   "name": "spina",
   "dependencies": {
-    "trix": "harmdewit/trix"
+    "trix": "denkGroot/trix"
   }
 }

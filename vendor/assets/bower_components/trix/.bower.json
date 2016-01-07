@@ -38,7 +38,7 @@
     "tag": "0.9.4",
     "commit": "e34a0db3c9e0ca303488227fceb6cd9b33cfdd09"
   },
-  "_source": "git://github.com/harmdewit/trix.git",
+  "_source": "git://github.com/denkGroot/trix.git",
   "_target": "*",
-  "_originalSource": "harmdewit/trix"
+  "_originalSource": "denkGroot/trix"
 }
