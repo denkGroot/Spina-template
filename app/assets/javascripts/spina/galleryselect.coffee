@@ -10,3 +10,4 @@ $(document).on 'click', '.gallery .item', ->
     gallery.find('.item input').prop('checked', false)
     $(this).toggleClass('selected')
     $(this).find('input').prop('checked', true)
+    $(this).closest('form').submit()
