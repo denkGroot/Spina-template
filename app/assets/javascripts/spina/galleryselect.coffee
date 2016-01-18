@@ -1,4 +1,4 @@
-$(document).on 'click', '.gallery .item', ->
+$(document).on 'click', '.gallery .item:not(.item-uploader)', ->
   gallery = $(this).parents('.gallery')
 
   if gallery.data('multiselect') != undefined

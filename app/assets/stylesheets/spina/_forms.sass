@@ -556,6 +556,13 @@ input.datepicker
     font-weight: 600
     line-height: 36px
     margin-bottom: 2px
+    position: absolute
+    right: 0px
+
+    span
+      border: 5px solid #fff
+      margin-top: -5px
+      margin-right: -5px
 
     span:before
       display: inline-block
@@ -566,13 +573,15 @@ input.datepicker
   @include box-shadow(0 0 20px rgba(0, 0, 0, .2))
 
 ul.sortable-grid
+  margin: -8px
+  
   .image, .sortable-placeholder
     border-radius: 5px
     cursor: move
     display: block
     float: left
     height: 120px
-    margin-right: 16px
+    margin: 8px
     overflow: hidden
     width: 120px
     @include transition(box-shadow .3s ease)
