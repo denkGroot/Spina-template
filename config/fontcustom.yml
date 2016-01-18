@@ -70,7 +70,7 @@ output:
 # -----------------------------------------------------------------------------
 
 templates:
-  - _icons_spina.css.scss
+  - _icons_spina.scss
   - preview
 #- my-custom-template.yml
 

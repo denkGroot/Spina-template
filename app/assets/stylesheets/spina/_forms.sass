@@ -529,6 +529,9 @@ input.datepicker
   margin-top: 2px
   position: relative
 
+  .image
+    @include transition(all .3s ease)
+
   &:hover .button
     background: tint(#efefef, 20%)
 
@@ -559,18 +562,23 @@ input.datepicker
       margin-right: 6px
       vertical-align: middle
 
+.media_picker:hover .image
+  @include box-shadow(0 0 20px rgba(0, 0, 0, .2))
+
 ul.sortable-grid
   .image, .sortable-placeholder
     border-radius: 5px
+    cursor: move
     display: block
     float: left
     height: 120px
     margin-right: 16px
     overflow: hidden
     width: 120px
+    @include transition(box-shadow .3s ease)
+
+    &:hover
+      @include box-shadow(0 0 20px rgba(0, 0, 0, .2))
 
   .sortable-placeholder
     background: #f5f5f5
-
-.media_picker:hover .image
-  opacity: .75

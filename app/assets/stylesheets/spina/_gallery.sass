@@ -1,5 +1,8 @@
 // Gallery
 
+.gallery-container
+  margin: -8px
+
 .gallery
   margin: 20px 0
 
@@ -8,7 +11,7 @@
     float: left
     height: 150px
     line-height: 100px
-    margin: 0 16px 16px 0
+    margin: 8px
     overflow: hidden
     position: relative
     width: 150px
@@ -84,7 +87,10 @@
   display: block
 
 .gallery-select
-  margin: 0
+  margin: -8px
+
+  &.gallery-select-multiple
+    padding-bottom: 70px
 
   form
     margin: 0
@@ -95,27 +101,39 @@
     display: inline
     height: 150px
     line-height: 150px
-    margin: 0 16px 16px 0
+    margin: 8px
     position: relative
     width: 150px
-
-    .overlay
-      background: #fff
-      opacity: 0
-
-    &:hover .overlay
-      background: #fff
-      opacity: .5
-
-    &.selected .overlay
-      background: $primary-color
-      opacity: .7
+    @include transition(all .3s ease)
 
     input
       display: none
 
     img
       display: block
+
+  .item:hover
+    @include box-shadow(0 0 20px rgba(0, 0, 0, .4))
+
+  .item.selected:before
+    content: " "
+    height: 100%
+    position: absolute
+    top: 0px
+    width: 100%
+    z-index: 2
+    @include linear-gradient(135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))
+
+  .item.selected:after
+    color: #95e995
+    font-size: 36px
+    position: absolute
+    text-align: center
+    text-shadow: 0 2px 20px rgba(0, 0, 0, .75)
+    top: 0
+    width: 100%
+    z-index: 3
+    @extend .icon, .icon-large-check:before
 
   .item.attachment
     height: 60px
@@ -135,6 +153,17 @@
       background: $primary-color
       color: #fff
       opacity: .7
+
+  .gallery-select-action-bar
+    background: #fff
+    border-top: 1px solid #e5e5e5
+    bottom: 0px
+    clear: both
+    margin: 0 -12px
+    padding: 12px
+    position: absolute
+    width: 100%
+    z-index: 3
 
 // Customfile
 
@@ -213,10 +242,3 @@
     text-transform: lowercase
     width: 100%
     @include transition(color .2s ease)
-
-.gallery .item.item-small
-  .customfile:before
-    line-height: 85px
-
-  .customfile:after
-    line-height: 85px

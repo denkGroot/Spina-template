@@ -1,7 +1,7 @@
 {
   "checksum": {
-    "previous": "352ec2bd099578cec26c59ee25b25778c6c6a412b9c4326d2b405df12473253e",
-    "current": "352ec2bd099578cec26c59ee25b25778c6c6a412b9c4326d2b405df12473253e"
+    "previous": "f41baa27754f14914953c8becaa2c98feeb21babb0b39362b4799ab63f5f26e1",
+    "current": "f41baa27754f14914953c8becaa2c98feeb21babb0b39362b4799ab63f5f26e1"
   },
   "fonts": [
     "app/assets/fonts/spina/icons_spina.ttf",
@@ -114,6 +114,10 @@
       "codepoint": 61729,
       "source": "app/assets/icons/spina/italic.svg"
     },
+    "large-check": {
+      "codepoint": 61743,
+      "source": "app/assets/icons/spina/large-check.svg"
+    },
     "link": {
       "codepoint": 61732,
       "source": "app/assets/icons/spina/link.svg"
@@ -214,14 +218,13 @@
     },
     "preprocessor_path": null,
     "quiet": false,
-    "skip_first": false,
     "templates": [
-      "_icons_spina.css.scss",
+      "_icons_spina.scss",
       "preview"
     ]
   },
   "templates": [
-    "app/assets/stylesheets/spina/_icons_spina.css.scss",
+    "app/assets/stylesheets/spina/_icons_spina.scss",
     "app/assets/icons/spina/preview/icons_spina-preview.html"
   ]
 }

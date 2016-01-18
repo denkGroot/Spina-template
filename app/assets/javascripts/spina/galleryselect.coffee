@@ -5,6 +5,12 @@ $(document).on 'click', '.gallery .item', ->
     $(this).toggleClass('selected')
     checkbox = $(this).find('input:checkbox')
     checkbox.prop("checked", !checkbox.prop("checked"))
+    $form = $(this).closest('form')
+    count = $form.find('.item.selected').size()
+    if count > 0
+      $form.find('.gallery-select-counter').text("(#{count})")
+    else
+      $form.find('.gallery-select-counter').text("")
   else
     gallery.find('.item').removeClass('selected')
     gallery.find('.item input').prop('checked', false)
