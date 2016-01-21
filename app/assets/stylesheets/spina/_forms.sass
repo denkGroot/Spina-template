@@ -481,14 +481,14 @@ input.datepicker
       display: block
       font-weight: 400
       padding: 6px 0
-      @extend .icon:before, .icon-upload-outline:before
+      @extend .icon, .icon-upload-outline:before
       font-size: 28px
       vertical-align: middle
       @include transition(color .2s ease)
 
     &:after
       color: #bbb
-      @extend .icon:before, .icon-refresh:before
+      @extend .icon, .icon-refresh:before
       display: none
       font-size: 36px
       @include animation("rotate" 2s linear infinite)
