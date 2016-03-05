@@ -116,7 +116,7 @@ ready = ->
       container.find(".choose-text-type").fadeOut(100)
 
   $(".dd").nestable
-    maxDepth: 3
+    maxDepth: "<%= Spina.config.max_page_depth %>"
 
   $(".structure-form-menu ul").sortable
     handle: '.sortable-handle'
