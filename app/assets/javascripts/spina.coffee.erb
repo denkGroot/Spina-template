@@ -115,9 +115,6 @@ ready = ->
     editor.on "blur", ->
       container.find(".choose-text-type").fadeOut(100)
 
-  $(".dd").nestable
-    maxDepth: "<%= Spina.config.max_page_depth %>"
-
   $(".structure-form-menu ul").sortable
     handle: '.sortable-handle'
 
