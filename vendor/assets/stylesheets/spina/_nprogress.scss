@@ -1,5 +1,6 @@
 /* Make clicks pass-through */
 #nprogress {
+  display: none;
   pointer-events: none;
   -webkit-pointer-events: none;
   position: fixed;

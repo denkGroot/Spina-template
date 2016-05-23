@@ -1,7 +1,7 @@
 {
   "checksum": {
-    "previous": "f41baa27754f14914953c8becaa2c98feeb21babb0b39362b4799ab63f5f26e1",
-    "current": "f41baa27754f14914953c8becaa2c98feeb21babb0b39362b4799ab63f5f26e1"
+    "previous": "ff35fb7d2020e3b5f467c24bb378b20d6f2611b9fea70e4e42fec9eb74e2e1a3",
+    "current": "ff35fb7d2020e3b5f467c24bb378b20d6f2611b9fea70e4e42fec9eb74e2e1a3"
   },
   "fonts": [
     "app/assets/fonts/spina/icons_spina.ttf",
@@ -10,6 +10,10 @@
     "app/assets/fonts/spina/icons_spina.eot"
   ],
   "glyphs": {
+    "barchart": {
+      "codepoint": 61747,
+      "source": "app/assets/icons/spina/barchart.svg"
+    },
     "bars": {
       "codepoint": 61710,
       "source": "app/assets/icons/spina/bars.svg"
@@ -41,6 +45,10 @@
     "caret-up": {
       "codepoint": 61723,
       "source": "app/assets/icons/spina/caret-up.svg"
+    },
+    "cart": {
+      "codepoint": 61745,
+      "source": "app/assets/icons/spina/cart.svg"
     },
     "chart-outline": {
       "codepoint": 61705,
@@ -85,6 +93,10 @@
     "cross": {
       "codepoint": 61718,
       "source": "app/assets/icons/spina/cross.svg"
+    },
+    "customer-outline": {
+      "codepoint": 61748,
+      "source": "app/assets/icons/spina/customer-outline.svg"
     },
     "document": {
       "codepoint": 61696,
@@ -138,6 +150,10 @@
       "codepoint": 61697,
       "source": "app/assets/icons/spina/media-library.svg"
     },
+    "megaphone": {
+      "codepoint": 61746,
+      "source": "app/assets/icons/spina/megaphone.svg"
+    },
     "min": {
       "codepoint": 61735,
       "source": "app/assets/icons/spina/min.svg"
@@ -166,6 +182,10 @@
       "codepoint": 61708,
       "source": "app/assets/icons/spina/preview.svg"
     },
+    "product-outline": {
+      "codepoint": 61749,
+      "source": "app/assets/icons/spina/product-outline.svg"
+    },
     "random": {
       "codepoint": 61711,
       "source": "app/assets/icons/spina/random.svg"
@@ -177,6 +197,10 @@
     "search": {
       "codepoint": 61712,
       "source": "app/assets/icons/spina/search.svg"
+    },
+    "shop": {
+      "codepoint": 61744,
+      "source": "app/assets/icons/spina/shop.svg"
     },
     "social-outline": {
       "codepoint": 61704,
@@ -218,6 +242,7 @@
     },
     "preprocessor_path": null,
     "quiet": false,
+    "skip_first": false,
     "templates": [
       "_icons_spina.scss",
       "preview"
