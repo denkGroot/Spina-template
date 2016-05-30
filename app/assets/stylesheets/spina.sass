@@ -125,10 +125,13 @@ nav#secondary_top
   text-align: center
   top: 0px
   width: 100%
+  z-index: 5
 
   ul
     margin: 0
     padding: 0
+    @include display(flex)
+    @include justify-content(center)
 
   ul li
     display: inline-block
@@ -136,12 +139,11 @@ nav#secondary_top
 
   ul li a
     color: #333
-    display: inline-block
+    display: block
     font-size: 10px
     font-weight: 600
     letter-spacing: 1px
     line-height: 15px
-    margin: 0 -2px
     padding: 18px 20px
     text-align: center
     text-decoration: none
@@ -620,3 +622,12 @@ label
 
   img
     display: block
+
+.text-danger
+  color: $danger-color
+
+.text-center
+  text-align: center
+
+.text-right
+  text-align: right

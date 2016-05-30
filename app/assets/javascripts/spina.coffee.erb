@@ -25,9 +25,20 @@ $(document).on 'page:change', -> NProgress.done()
 $(document).on 'page:restore', -> NProgress.remove()
 
 # Clickable TR's
-$(document).on 'click', '.table-clickable tbody tr', ->
-  checkbox = $(this).find('input[type="checkbox"]:first, input[type="radio"]:first')
-  checkbox.prop("checked", !checkbox.prop("checked"))
+$(document).on 'click', '.table-clickable tbody tr', (e) ->
+  $row = $(this).closest('tr')
+  checkbox = $row.find('input[type="checkbox"]:first, input[type="radio"]:first')
+
+  if checkbox.length > 0
+    checkbox.prop("checked", !checkbox.prop("checked"))
+  else
+    $row.find('a.table-link:first')[0].click()
+
+$(document).on 'click', '.table-clickable tbody .table-link', (e) ->
+  e.stopPropagation()
+
+$(document).on 'click', '.table-clickable tbody tr input', (e) ->
+  e.stopPropagation()
 
 # Search inputs
 $(document).on 'keyup', '.search-input input', (e) ->

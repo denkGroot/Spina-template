@@ -20,7 +20,7 @@
 
 table.table
   color: #333
-  font-size: 13px
+  font-size: 14px
   line-height: 18px
   margin: 20px 0
   width: 100%
@@ -32,13 +32,19 @@ table.table
     border: none
 
   thead th
+    color: #333
+    font-weight: 600
     outline: none
-    padding: 6px 12px
+    padding: 12px 12px
     text-align: left
 
   tbody td, tbody th
     padding: 10px 12px
     text-align: left
+
+  thead th, tbody td, tbody th
+    &.text-right
+      text-align: right
 
   th.nowrap, td.nowrap
     white-space: nowrap
@@ -61,9 +67,43 @@ table.table
   td.align-right
     text-align: right
 
-  a:not(.button)
+  a.table-link
     display: block
-    line-height: 28px
+    margin: -10px 0
+    padding: 14px 0
+
+  a.table-link:hover
+    text-decoration: underline
+
+  th .table-sort
+    border-radius: 3px 3px 0 0
+    color: #333
+    display: block
+    margin: -12px -16px -13px -16px
+    padding: 13px 16px 12px 16px
+    @include transition(background .1s ease)
+
+    &:not(.table-column-sorted):hover
+      background: #f9f9f9
+
+  th .table-column-sorted
+    background: #fff
+    border: 1px solid #ddd
+    border-bottom: 1px solid #fff
+    padding: 13px 15px 12px 15px
+    position: relative
+
+    &:after
+      font-size: 16px
+      position: absolute
+      right: 10px
+      @extend .icon, .icon-caret-up:before
+
+    &.table-column-sorted-desc:after
+      @extend .icon-caret-down:before
+
+  th.text-right .table-column-sorted
+    text-align: left
 
 // Table form
 
@@ -98,13 +138,96 @@ table.table.table-form
       margin-right: 10px
       vertical-align: middle
 
+// Progress bars
+.progress
+  position: relative
+
+.progress-bar
+  border: 1px solid #9f9f9f
+  border-radius: 6px
+  height: 12px
+  overflow: hidden
+  position: relative
+  @include display(flex)
+  @include transition(all .2s ease)
+
+.progress-bar-divider
+  border-left: 1px solid #9f9f9f
+  height: 10px
+  opacity: .5
+  position: relative
+  @include flex(1)
+
+  &:first-child  
+    border: none
+
+.progress-bar-inner
+  background: #cdcdcd
+  height: 10px
+  left: 0
+  position: absolute
+  top: 0
+
+.progress-label
+  color: #838383
+  display: block
+  font-weight: 700
+  font-size: 10px
+  left: 0
+  letter-spacing: 1px
+  line-height: 10px
+  opacity: 0
+  position: absolute
+  text-align: center
+  text-transform: uppercase
+  top: 2px
+  width: 100%
+  @include transition(all .2s ease)
+
+tr:hover .progress
+  .progress-bar
+    @include transform(translateY(-6px))
+
+  .progress-label
+    opacity: 1
+    @include transform(translateY(9px))
+
+.progress-bar-primary
+  & .progress-bar
+    border-color: tint($primary-color, 20%)
+
+  & .progress-bar-divider
+    border-color: tint($primary-color, 20%)
+
+  & .progress-bar-inner
+    background: tint($primary-color, 60%)
+
+  & .progress-label
+    color: tint($primary-color, 20%)
+
+.progress-bar-success
+  & .progress-bar
+    border-color: $success-color
+
+  & .progress-bar-divider
+    border-color: $success-color
+
+  & .progress-bar-inner
+    background: tint($success-color, 60%)
+
+  & .progress-label
+    color: $success-color
+
 // Clickable tables
 
 .table-clickable
+  tbody tr
+    @include transition(background .1s ease)
+
   tbody tr:hover
     background: #f9f9f9
 
-  tbody tr
+  tbody tr, tbody tr input[type="checkbox"], tbody tr input[type="radio"]
     cursor: pointer
 
 // Datatables
