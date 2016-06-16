@@ -1,7 +1,7 @@
 {
   "checksum": {
-    "previous": "6a18f924b896270ed10714f76f6484ccbbf31018b4fdb6982178bf246ccbad19",
-    "current": "6a18f924b896270ed10714f76f6484ccbbf31018b4fdb6982178bf246ccbad19"
+    "previous": "6918c7892bab804cf40ce143f3b03ae668589381c4dd8b0dc8e9c1f50371a8f5",
+    "current": "6918c7892bab804cf40ce143f3b03ae668589381c4dd8b0dc8e9c1f50371a8f5"
   },
   "fonts": [
     "app/assets/fonts/spina/icons_spina.ttf",
@@ -165,6 +165,10 @@
     "pages": {
       "codepoint": 61737,
       "source": "app/assets/icons/spina/pages.svg"
+    },
+    "pencil": {
+      "codepoint": 61751,
+      "source": "app/assets/icons/spina/pencil.svg"
     },
     "pencil-outline": {
       "codepoint": 61709,

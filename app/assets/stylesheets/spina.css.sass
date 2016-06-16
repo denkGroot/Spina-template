@@ -64,7 +64,6 @@ nav#primary
     padding-top: 12px
     position: relative
     width: 100%
-    @include transition(background .2s ease)
 
   ul li
     display: block
@@ -82,7 +81,6 @@ nav#primary
     opacity: .5
     padding: 0 20px
     position: relative
-    @include transition(all .2s ease)
 
     &:hover
       opacity: 1
@@ -91,7 +89,6 @@ nav#primary
       font-size: 26px
       margin-left: 5px
       margin-right: 11px
-      @include transition(all .2s ease)
 
     .icon-caret-right
       font-size: 18px
@@ -99,9 +96,9 @@ nav#primary
       right: 10px
 
     .icon-home
-      font-size: 28px
-      margin-left: 4px
-      margin-right: 10px
+      font-size: 32px
+      margin-left: 2px
+      margin-right: 8px
 
   ul li.active > a
     opacity: 1
@@ -116,7 +113,6 @@ nav#primary
     z-index: 1
     @include linear-gradient(#3b3f74, #7a76ad)
     @include transform(translateX(100%))
-    @include transition(all .2s ease)
 
     li a
       line-height: 40px
@@ -134,16 +130,19 @@ nav#primary
     &:hover
       opacity: .5
 
-  &.animated:before
-    position: absolute
-    left: 0px
-    top: 0px
-    content: " "
-    display: block
-    width: 80px
-    height: 74px
-
   &.animated > ul
+    @include transition(background .2s ease)
+
+    & > li > a
+      @include transition(all .2s ease)
+
+      .icon
+        @include transition(all .2s ease)
+
+    li.active ul 
+      @include transition(all .2s ease)
+
+  &.transformed > ul
     background: rgba(0, 0, 0, .4)
 
     & > li > a
@@ -154,7 +153,7 @@ nav#primary
         color: #f5f5fa
         @include transform(translateX(10px))
 
-    li.active ul 
+    li.active ul
       @include transform(translateX(0%))
 
 // Secondary navigation
@@ -578,6 +577,7 @@ section#main
 
 .breadcrumbs
   color: #333
+  display: inline-block
   font-size: 24px
 
   a
