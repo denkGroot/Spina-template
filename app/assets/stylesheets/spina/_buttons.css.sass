@@ -18,7 +18,8 @@ button, input[type="submit"], input[type="button"]
   @include transition(all .3s ease)
 
   &:hover
-    background: tint(#efefef, 20%)
+    background: shade(#efefef, 5%)
+    color: inherit
 
   &.button-shaded:hover
     background: #efefef
@@ -34,13 +35,13 @@ button, input[type="submit"], input[type="button"]
     color: #fff
 
     &:hover
-      background: tint($primary-color, 20%)
+      background: shade($primary-color, 10%)
 
     &.button-shaded:hover
       background: $primary-color
 
     &:active, &.button-active, &.button-shaded, &.button-shaded:active
-      background: shade($primary-color, 10%)
+      background: shade($primary-color, 20%)
 
   &.button-success
     background: $success-color
@@ -58,6 +59,10 @@ button, input[type="submit"], input[type="button"]
   &.button-danger
     color: $danger-color
 
+  &.button-block
+    display: block
+    text-align: center
+
   &.button-link
     background: none
     font-weight: 600
@@ -70,6 +75,7 @@ button, input[type="submit"], input[type="button"]
 
   i.icon
     margin-right: 8px
+    margin-top: -2px
 
   &.icon-only:before
     margin-right: 0
@@ -150,10 +156,10 @@ button, input[type="submit"], input[type="button"]
   .button
     float: left
     margin-left: 0
+    border-right: none
 
   .button:first-child
     border-radius: 21px 0 0 21px
-    border-right: none
 
   .button:last-child
     border-radius: 0 21px 21px 0

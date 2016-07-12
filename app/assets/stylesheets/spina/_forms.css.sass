@@ -4,11 +4,15 @@
     margin-bottom: 30px
     @include display(flex)
 
+    &:last-child
+      margin-bottom: 0
+
   .horizontal-form-label
     color: #333
     font-size: 13px
     font-weight: 600
     line-height: 18px
+    padding-right: 20px
     width: 240px
     @include justify-content(center)
     @include display(flex)
@@ -35,6 +39,83 @@
       display: block
       height: 100%
       width: 100%
+
+// Sidebar form
+.sidebar-form
+  .sidebar-form-group
+    margin-bottom: 30px
+    @include display(flex)
+
+  .sidebar-form-label
+    color: #333
+    font-size: 12px
+    font-weight: 600
+    letter-spacing: 1px
+    line-height: 24px
+    text-transform: uppercase
+
+  .sidebar-form-content
+    font-size: 16px
+    line-height: 24px
+    margin-bottom: 20px
+    margin-top: 0
+
+    &:last-child
+      margin-bottom: 0px
+
+  .sidebar-form-column:first-child
+    padding-left: 0 !important
+    padding-right: 20px
+    @include flex(1)
+
+    .well
+      margin-right: 0
+
+  .sidebar-form-column:last-child
+    padding-left: 20px
+    padding-right: 0 !important
+    @include flex(1)
+
+  .sidebar-form-column
+    &.flex-1
+      @include flex(1)
+
+    &.flex-2
+      @include flex(2)
+
+    &.flex-3
+      @include flex(3)
+
+    &.flex-4
+      @include flex(4)
+
+    &.flex-5
+      @include flex(5)
+
+// Form groups
+.form-group
+  margin-bottom: 20px
+
+// Labels
+.form-label
+  color: #333
+  font-size: 13px
+  font-weight: 600
+  line-height: 24px
+
+// Input groups
+.input-group
+  @include display(flex)
+
+  #{$all-text-inputs}, .text-input, .select-dropdown
+    &:not(:first-child)
+      border-bottom-left-radius: 0
+      border-top-left-radius: 0
+
+    &:not(:last-child)
+      border-bottom-right-radius: 0
+      border-top-right-radius: 0
+      border-right: none
 
 // Inputs
 
@@ -353,18 +434,18 @@ input.datepicker
 // Structure form
 
 .structure-form
-  margin-left: -40px
+  margin-left: -20px
   position: relative
   @include display(flex)
 
   .structure-form-menu
     box-sizing: content-box
-    min-width: 280px
+    min-width: 260px
 
     label
       display: block
       font-size: 13px
-      padding: 12px 40px
+      padding: 12px 20px
       text-transform: none
 
     ul
@@ -398,7 +479,7 @@ input.datepicker
       height: 50px
       line-height: 50px
       outline: none
-      padding-left: 40px
+      padding-left: 20px
 
       &:hover
         background: #f9f9f9
@@ -574,7 +655,7 @@ input.datepicker
 
 ul.sortable-grid
   margin: -8px
-  
+
   .image, .sortable-placeholder
     border-radius: 5px
     cursor: move
