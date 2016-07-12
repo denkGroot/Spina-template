@@ -12,8 +12,9 @@ $(document).on 'click', '.gallery .item:not(.item-uploader)', ->
     else
       $form.find('.gallery-select-counter').text("")
   else
+    checked = $(this).find('input').prop('checked')
     gallery.find('.item').removeClass('selected')
     gallery.find('.item input').prop('checked', false)
-    $(this).toggleClass('selected')
-    $(this).find('input').prop('checked', true)
+    $(this).addClass('selected') unless checked
+    $(this).find('input').prop('checked', !checked)
     $(this).closest('form').submit()
