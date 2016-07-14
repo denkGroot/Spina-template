@@ -3,6 +3,10 @@
 .table-container
   margin: 0 -40px
 
+  tbody
+    tr
+      background: #fff
+
   table.table tr td:first-child, table.table tr th:first-child
     padding-left: 40px
 
@@ -39,7 +43,7 @@ table.table
     text-align: left
 
   tbody td, tbody th
-    padding: 10px 12px
+    padding: 14px 12px
     text-align: left
 
   thead th, tbody td, tbody th
@@ -70,10 +74,7 @@ table.table
   a.table-link
     display: block
     margin: -10px 0
-    padding: 14px 0
-
-  a.table-link:hover
-    text-decoration: underline
+    padding: 10px 0
 
   th .table-sort
     border-radius: 3px 3px 0 0
@@ -270,3 +271,22 @@ tr:hover .progress
 
   a.paginate_disabled_previous, a.paginate_disabled_next
     display: none
+
+// Information tables
+.information-tables
+  @include display(flex)
+
+  .information-table
+    @include flex(1)
+
+    th, td
+      color: #333
+      font-size: 14px
+      font-weight: 500
+      line-height: 30px
+      text-align: left
+      vertical-align: top
+
+    th
+      color: #999
+      padding-right: 10px
