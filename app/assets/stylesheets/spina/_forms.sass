@@ -85,11 +85,17 @@
   @include flex(1)
 
   #{$all-text-inputs}, textarea, .text-input
+    background: none
     border: none
     border-radius: 0
     box-shadow: none
 
-  .sidebar-form-append
+    &:disabled
+      background: none
+
+  &[data-form-append]:after
+    content: attr(data-form-append)
+    font-size: 14px
     font-weight: 600
     line-height: 50px
     padding: 0 20px
@@ -105,6 +111,34 @@
 
   #{$all-text-inputs}
     height: 50px
+
+.sidebar-form-images
+  margin: 25px 0
+
+  &:after
+    clear: both
+    content: " "
+    display: block
+
+.sidebar-form-image
+  background: #ededf2
+  border: 1px solid #e5e5ea
+  border-radius: 2px
+  display: inline-block
+  margin-bottom: 10px
+  margin-right: 10px
+  width: 100px
+
+  img
+    border-radius: 2px
+    display: block
+    width: 100%
+
+  &:first-child
+    width: 320px
+
+  &:nth-child(3n + 1)
+    margin-right: 0
 
 // Form groups
 .form-group
@@ -200,6 +234,9 @@
     display: block
     height: 10px
     width: 10px
+
+  &:disabled
+    background: #ededf2
 
 #{$all-text-inputs-focus}, textarea:focus, .text-input:focus
   border-color: $primary-color
