@@ -11,6 +11,7 @@ $(document).on 'click', '[data-trigger="dropdown"]', ->
     body.removeClass('dropdown')
     dropdown.removeClass('animated fadeInDown')
   else
+    dropdown.removeClass('no-animation')
     trigger.addClass('button-active')
     body.addClass('dropdown')
     dropdown.addClass('animated fadeInDown')
@@ -57,8 +58,18 @@ $(document).on 'click', '.slide-controls .previous, .slide-controls .next', (e) 
   else
     sliding_dropdown.find('.previous').addClass('muted')
 
+  # Force redraw dropdown
+  sliding_dropdown.addClass('no-animation')
+  forceRedraw(sliding_dropdown[0])
+
 closeDropdown = ->
   $('body').removeClass('dropdown')
   $('[data-dropdown] ul, [data-dropdown] .sliding-dropdown').removeClass('animated fadeInDown')
   $('[data-trigger="dropdown"]').removeClass('button-active')
   return false
+
+forceRedraw = (element) ->
+  disp = element.style.display
+  element.style.display = 'none'
+  trick = element.offsetHeight
+  element.style.display = disp

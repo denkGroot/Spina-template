@@ -214,6 +214,9 @@ button, input[type="submit"], input[type="button"]
       display: block
       @include animation-duration(.3s)
 
+    &.no-animation
+      @include animation(none)
+
   ul:before, .sliding-dropdown:before
     content: ""
     display: block
@@ -238,14 +241,14 @@ button, input[type="submit"], input[type="button"]
     border-left: 7px solid transparent
     border-right: 7px solid transparent
 
-  ul.align-right
+  ul.align-right, .sliding-dropdown.align-right
     right: 0px
 
-  ul.align-right:before
+  ul.align-right:before, .sliding-dropdown.align-right:before
     left: auto
     right: 11px
 
-  ul.align-right:after
+  ul.align-right:after, .sliding-dropdown.align-right:after
     left: auto
     right: 12px
 
