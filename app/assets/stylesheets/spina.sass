@@ -33,6 +33,7 @@
 @import spina/cards
 @import spina/trix
 @import spina/wizard
+@import spina/notifications
 
 // Plugins
 @import spina/morris
@@ -344,59 +345,6 @@ nav#secondary
 //   //     right: -11px
 //   //     top: 33%
 //   //     @include triangle(23px, shade(#fff, 10%), right)
-
-// Notifications
-
-.notification
-  position: relative
-  color: $info-color
-  margin: 20px 0
-  overflow: hidden
-  font-size: 14px
-  padding-left: 32px
-
-  &:before
-    position: absolute
-    left: 0px
-    color: #77caf9
-    display: block
-    font-size: 18px
-    margin-top: 1em
-
-  p
-    color: $info-color
-    font-weight: 600
-    line-height: 18px
-    margin-bottom: 0
-
-  small
-    display: block
-    font-size: 14px
-    font-weight: normal
-
-  ul
-    margin: 0
-
-  li
-    font-weight: normal
-
-  &.notification-error
-    color: $error-color
-
-    p
-      color: $error-color
-
-    &:before
-      color: #e7baba
-
-  &.notification-danger
-    color: $danger-color
-
-    p
-      color: $danger-color
-
-    &:before
-      color: $danger-color
 
 // Permanent notice
 .permanent-notice

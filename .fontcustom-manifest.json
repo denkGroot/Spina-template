@@ -1,7 +1,7 @@
 {
   "checksum": {
-    "previous": "6918c7892bab804cf40ce143f3b03ae668589381c4dd8b0dc8e9c1f50371a8f5",
-    "current": "6918c7892bab804cf40ce143f3b03ae668589381c4dd8b0dc8e9c1f50371a8f5"
+    "previous": "d7a224e4be2ca3289d8f62c5bd3ed1ff861db5663661752c566f98a1b924a46c",
+    "current": "d7a224e4be2ca3289d8f62c5bd3ed1ff861db5663661752c566f98a1b924a46c"
   },
   "fonts": [
     "app/assets/fonts/spina/icons_spina.ttf",
@@ -106,6 +106,10 @@
       "codepoint": 61742,
       "source": "app/assets/icons/spina/dots.svg"
     },
+    "exclamation": {
+      "codepoint": 61752,
+      "source": "app/assets/icons/spina/exclamation.svg"
+    },
     "eye": {
       "codepoint": 61740,
       "source": "app/assets/icons/spina/eye.svg"
@@ -125,6 +129,10 @@
     "inbox-outline": {
       "codepoint": 61714,
       "source": "app/assets/icons/spina/inbox-outline.svg"
+    },
+    "info": {
+      "codepoint": 61753,
+      "source": "app/assets/icons/spina/info.svg"
     },
     "italic": {
       "codepoint": 61729,
