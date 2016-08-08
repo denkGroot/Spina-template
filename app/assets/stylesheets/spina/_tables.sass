@@ -219,6 +219,19 @@ tr:hover .progress
   & .progress-label
     color: $success-color
 
+.progress-bar-danger
+  & .progress-bar
+    border-color: $danger-color
+
+  & .progress-bar-divider
+    border-color: $danger-color
+
+  & .progress-bar-inner
+    background: tint($danger-color, 60%)
+
+  & .progress-label
+    color: $danger-color
+
 // Clickable tables
 
 .table-clickable

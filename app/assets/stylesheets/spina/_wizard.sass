@@ -98,6 +98,25 @@
       top: 3px
       z-index: 5
 
+  .wizard-step.error
+    .wizard-step-circle:before
+      color: #fff
+      font-size: 12px
+      height: 46px
+      line-height: 46px
+      text-align: center
+      position: absolute
+      width: 46px
+      z-index: 4
+      @extend .icon-cross, .icon
+
+    .wizard-step-circle:after
+      background: $danger-color
+      z-index: 3
+
+    .wizard-step-label
+      color: $danger-color
+
   .wizard-step.current
     .wizard-step-label
       color: $primary-color
