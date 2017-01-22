@@ -4,6 +4,7 @@
 #= require spina/jquery.nestable
 #= require spina/jquery.customfileinput
 #= require spina/jquery.farbtastic
+#= require spina/sortable
 #= require jquery-fileupload/basic
 #= require spina/raphael
 #= require spina/morris
@@ -18,6 +19,8 @@
 #= require spina/dropdown
 #= require spina/galleryselect
 #= require spina/uploads
+#= require spina/navigation
+#= require spina/notifications
 
 # Nprogress
 $(document).on 'page:fetch', -> NProgress.start()
@@ -25,9 +28,22 @@ $(document).on 'page:change', -> NProgress.done()
 $(document).on 'page:restore', -> NProgress.remove()
 
 # Clickable TR's
-$(document).on 'click', '.table-clickable tbody tr', ->
+$(document).on 'click', '.table-clickable tbody tr', (e) ->
+  $row = $(this).closest('tr')
+  $row.find('a.table-link:first')[0].click()
+
+$(document).on 'click', '.table-clickable tbody tr td', (e) ->
   checkbox = $(this).find('input[type="checkbox"]:first, input[type="radio"]:first')
-  checkbox.prop("checked", !checkbox.prop("checked"))
+
+  if checkbox.length > 0
+    checkbox.prop("checked", !checkbox.prop("checked"))
+    e.stopPropagation()
+
+$(document).on 'click', '.table-clickable tbody .table-link', (e) ->
+  e.stopPropagation()
+
+$(document).on 'click', '.table-clickable tbody tr input', (e) ->
+  e.stopPropagation()
 
 # Search inputs
 $(document).on 'keyup', '.search-input input', (e) ->
@@ -60,6 +76,11 @@ $(document).on 'change', '.dd', ->
 # Datatables
 
 ready = ->
+
+  # Set paddingTop for section#main
+  if header = document.getElementById('header')
+    headerHeight = header.getBoundingClientRect().height
+    $('section#main').css({paddingTop: headerHeight})
 
   # Custom file
   $('input[type="file"][data-customfileinput]:visible').each ->
@@ -150,5 +171,4 @@ ready = ->
         }
       }
 
-$(document).ready(ready)
-$(document).on 'page:load', ready
+$(document).on 'turbolinks:load', ready

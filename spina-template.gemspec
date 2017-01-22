@@ -19,9 +19,14 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
 
+<<<<<<< HEAD
   spec.add_dependency "bourbon"
   spec.add_dependency "neat"
   spec.add_dependency "fontcustom"
+=======
+  spec.add_dependency "bourbon", "~> 4.2"
+  spec.add_dependency "neat", "~> 1.5"
+>>>>>>> 1cd4c68fbe1b89f8190aeb76a6f268151734223d
   spec.add_dependency "coffee-rails"
   spec.add_dependency 'jquery-fileupload-rails'
 end

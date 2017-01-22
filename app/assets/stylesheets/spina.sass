@@ -32,6 +32,8 @@
 @import spina/login
 @import spina/cards
 @import spina/trix
+@import spina/wizard
+@import spina/notifications
 
 // Plugins
 @import spina/morris
@@ -48,263 +50,159 @@ html, body
   -webkit-font-smoothing: antialiased
 
 body
-  @include display(flex)
+  background: #f5f5fa
+  min-width: 1024px
 
 // Primary navigation
-
 nav#primary
-  background: #444882
   height: 100%
-  padding-top: 10px
-  position: relative
-  text-align: center
-  width: 80px
+  overflow: hidden
+  position: fixed
+  width: 300px
   @include linear-gradient(#3b3f74, #7a76ad)
 
-  @include media($tablet)
-    width: 80px
-
-  ul li a
-    color: #fff
-    display: block
-    font-size: 10px
-    font-weight: 700
-    opacity: .6
-    padding: 20px 0
-    position: relative
-    text-decoration: none
-    text-transform: uppercase
-    width: 100%
-    @include transition(color .15s ease)
-
-    @include media($tablet)
-      padding: 12px 0
-
-  ul li.active a, ul li a:hover
-    opacity: 1
-
-  ul li.bottom a
-    bottom: 0
-    left: 0
-    position: absolute
-
-  ul li a i.icon
-    display: block
-    font-size: 28px
-    margin-bottom: 8px
-    text-transform: none
-
-    @include media($tablet)
-      font-size: 20px
-
-  ul li:first-child a i.icon
-    font-size: 32px
-    margin-bottom: 3px
-
-  ul li a[data-badge]:after
-    background: $danger-color
-    border-radius: 8px
-    color: #fff
-    content: attr(data-badge)
-    display: block
-    font-size: 12px
-    font-weight: bold
-    line-height: 16px
-    min-width: 10px
-    padding: 0 3px
-    position: absolute
-    right: 28px
-    top: 12px
-
-// Secondary navigation
-
-nav#secondary
-  background: #f9f9f9
-  border-right: 1px solid #ccc
-  height: 100%
-  padding: 30px 0
-  width: 300px
-
-  @include media($tablet)
-    left: 80px
+  & > ul
+    height: 100%
     padding-top: 12px
-    width: 200px
-
-  h1
-    color: #333
-    font-size: 24px
-    font-weight: 300
-    margin-bottom: 36px
-    padding: 0 30px
-
-    @include media($tablet)
-      display: none
+    position: relative
+    width: 100%
 
   ul li
-    position: relative
+    display: block
+
+  ul li.bottom
+    bottom: 10px
+    position: absolute
 
   ul li a
-    color: #333
+    color: #f5f5fa
     display: block
     font-size: 15px
     font-weight: 600
-    line-height: 15px
-    padding: 16px 30px 16px 66px
-    text-decoration: none
-    @include transition(all .2s ease)
+    line-height: 54px
+    opacity: .5
+    padding: 0 20px
+    position: relative
 
-    @include media($tablet)
-      margin-left: 24px
-      padding-left: 0
+    &:hover
+      opacity: 1
 
-    small
-      color: #666
-      display: block
-      font-size: 14px
-      font-weight: normal
-      line-height: 18px
-      margin-top: 2px
-      @include transition(color .15s ease)
+    .icon
+      font-size: 26px
+      margin-left: 5px
+      margin-right: 11px
 
-      @include media($tablet)
-        display: none
-
-  ul li a:hover
-    background: #f1f1f1
-
-  ul li.active a
-    background: #f1f1f1
-    color: $primary-color
-
-    small, i.icon
-      color: inherit
-
-  ul li a i.icon
-    color: #666
-    display: block
-    float: left
-    font-size: 24px
-    line-height: 1
-    margin-left: -36px
-    text-align: center
-    width: 24px
-    @include transition(color .15s ease)
-
-    @include media($tablet)
-      display: none
-
-  ul li.active
-    &:before
-      content: ""
-      display: block
+    .icon-caret-right
+      font-size: 18px
       position: absolute
-      right: -12px
-      top: 33%
-      @include triangle(23px, #ccc, right)
+      right: 10px
 
-    &:after
-      content: ""
-      display: block
-      position: absolute
-      right: -11px
-      top: 33%
-      @include triangle(22px, #f1f1f1, right)
+    .icon-home
+      font-size: 32px
+      margin-left: 2px
+      margin-right: 8px
 
-// Tabs
+  ul li.active > a
+    opacity: 1
 
-nav.tabs
-  border-bottom: 1px solid #ddd
-  margin: 0 -40px 30px -40px
-  padding: 0 40px 0 24px
+  ul li ul
+    bottom: 0
+    left: 80px
+    padding-top: 20px
+    position: absolute
+    top: 0
+    width: 100%
+    z-index: 1
+    @include linear-gradient(#3b3f74, #7a76ad)
+    @include transform(translateX(100%))
+
+    li a
+      line-height: 40px
+
+  ul li ul li a.back-to-main-menu
+    font-size: 13px
+    font-weight: 700
+    opacity: .25
+    text-transform: uppercase
+
+    .icon
+      font-size: 16px
+      margin: -2px 0 0 -2px
+
+    &:hover
+      opacity: .5
+
+  &.animated > ul
+    @include transition(background .2s ease)
+
+    & > li > a
+      @include transition(all .2s ease)
+
+      .icon
+        @include transition(all .2s ease)
+
+    li.active ul 
+      @include transition(all .2s ease)
+
+  &.transformed > ul
+    background: rgba(0, 0, 0, .4)
+
+    & > li > a
+      color: transparent
+      @include transform(translateX(-10px))
+
+      .icon
+        color: #f5f5fa
+        @include transform(translateX(10px))
+
+    li.active ul
+      @include transform(translateX(0%))
+
+// Secondary navigation
+nav#secondary
+  margin-bottom: -30px
+  margin-top: 20px
 
   ul li
     display: inline
 
   ul li a
-    border: 1px solid transparent
-    color: #444
+    color: #4b4b4d
     display: inline-block
-    font-size: 14px
-    font-weight: 600
-    margin-bottom: -1px
-    margin-top: 20px
-    padding: 12px 16px
-    text-decoration: none
+    font-size: 12px
+    font-weight: 700
+    line-height: 28px
+    padding: 0 16px
+    opacity: .5
+    text-transform: uppercase
 
   ul li a:hover
-    color: #222
+    opacity: 1
 
   ul li.active a
-    border-color: #ddd
-    border-bottom: 1px solid #fff
-    border-radius: 3px 3px 0 0
-    color: $primary-color
+    border-bottom: 3px solid $primary-color
+    cursor: default
+    opacity: 1
+    margin: 0 16px
+    padding: 0
 
+  ul li:first-child a
+    margin-left: 0
+    padding-left: 0
+
+// Tabs
 .tab-content
   display: none
 
   &.active
     display: block
 
-// Notifications
-
-.notification
-  position: relative
-  color: $info-color
-  margin: 20px 0
-  overflow: hidden
-  font-size: 14px
-  padding-left: 32px
-
-  &:before
-    position: absolute
-    left: 0px
-    color: #77caf9
-    display: block
-    font-size: 18px
-    margin-top: 1em
-
-  p
-    color: $info-color
-    font-weight: 600
-    line-height: 18px
-    margin-bottom: 0
-
-  small
-    display: block
-    font-size: 14px
-    font-weight: normal
-
-  ul
-    margin: 0
-
-  li
-    font-weight: normal
-
-  &.notification-error
-    color: $error-color
-
-    p
-      color: $error-color
-
-    &:before
-      color: #e7baba
-
-  &.notification-danger
-    color: $danger-color
-
-    p
-      color: $danger-color
-
-    &:before
-      color: $danger-color
-
 // Permanent notice
 .permanent-notice
   background: #eee
   border-bottom: 1px solid #ddd
   color: #333
-  margin: -30px -40px 30px -40px
+  margin: 0 -40px 30px -40px
   padding: 0 40px
   position: relative
 
@@ -433,13 +331,27 @@ nav.tabs
     border-radius: 2px
     color: #fff
 
+// Main header
+header#header
+  background: #fff
+  border-bottom: 1px solid #eee
+  left: 300px
+  padding: 30px 40px
+  position: fixed
+  right: 0
+  top: 0
+  z-index: 10
+
+#header_actions
+  float: right
+  position: absolute
+  right: 20px
+  top: 24px
+
 // Main content
 
 section#main
-  padding: 30px 40px
-  height: 100%
-  overflow: scroll
-  @include flex(1)
+  padding: 30px 40px 30px 340px
 
 // Danger zone
 .danger-zone
@@ -459,30 +371,23 @@ section#main
 // Breadcrumbs
 
 #main_content_header
-  min-height: 50px
-
   .preview-website i
     vertical-align: bottom
 
-  @include media($tablet)
-    .button
-      overflow: hidden
-      height: 32px
-      width: 35px
-
-      &:before
-        margin-right: 200px
-
 .breadcrumbs
   color: #333
+  display: inline-block
   font-size: 24px
-  font-weight: 300
+
+  .button
+    margin-left: 12px
+    vertical-align: middle
 
   a
     color: #999
 
-    @include media($tablet)
-      display: none
+    &:hover
+      color: #999
 
   .divider
     background: url(asset-path('spina/divider.png'))
@@ -492,18 +397,49 @@ section#main
     margin: 0 20px
     width: 6px
 
-    @include media($tablet)
-      display: none
+// Well
+
+.well
+  background: #fff
+  border: 1px solid #eee
+  border-radius: 3px
+  margin: 24px -20px
+  padding: 20px
+
+  hr.divider
+    clear: both
+    margin: 20px -20px
+
+  .table-container
+    margin: -20px -20px
+
+    .table
+      margin: 0
+
+      tr td:first-child, tr th:first-child
+        padding-left: 20px
+
+      tr td:last-child, tr th:last-child
+        padding-right: 20px
 
 // General styles
 
 h1, h2, h3, h4, h5, h6
-  font-weight: 300
+  font-weight: 400
   margin: 0
+
+  &.page-header
+    border-bottom: 1px solid #eee
+    color: #333
+    margin: 40px 0 20px 0
+    padding-bottom: 8px
 
 h1, h2
   color: #333
   font-size: 24px
+
+h3
+  color: #333
 
 ul
   list-style: none
@@ -519,12 +455,23 @@ a
   color: $primary-color
   text-decoration: none
 
+  &:hover
+    color: shade($primary-color, 40%)
+
 label
   color: #333
   font-size: 11px
   font-weight: 600
   margin-right: 14px
-  text-transform: uppercase
+
+.divider-container
+  margin: 0 -40px
+
+hr.divider
+  background: #e9e9eb
+  border: none
+  height: 1px
+  margin: 20px 0
 
 .pull-left
   float: left
@@ -539,7 +486,7 @@ label
   bottom: 0px
   opacity: .5
   padding: 20px
-  position: absolute
+  position: fixed
   right: 0px
   @include transition(opacity .2s ease)
 
@@ -548,3 +495,18 @@ label
 
   img
     display: block
+
+.text-danger
+  color: $danger-color
+
+.text-success
+  color: $success-color
+
+.text-muted
+  color: #999
+
+.text-center
+  text-align: center
+
+.text-right
+  text-align: right
